@@ -47,7 +47,7 @@ case .failure(let decodingError):
 }
 ```
 
-### Verification
+### EUDCCVerifier
 
 The `EUDCCVerifier` library provides an `EUDCCVerifier` object which can be used to verify the cryptographic signature of the EU Digital COVID Certificate.
 
@@ -72,7 +72,7 @@ verifier.verify(eudcc: eudcc) { result in
 }
 ```
 
-### Validation
+### EUDCCValidator
 
 The `EUDCCValidator` library provides an `EUDCCValidator` object which can be used to validate the EU Digital COVID Certifiate based on given rules.
 
