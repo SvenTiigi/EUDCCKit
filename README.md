@@ -1,7 +1,7 @@
 <h1 align="center">EU Digital COVID Certificate Kit</h1>
 
 <p align="center">
-    A Swift Package to decode, verify and validate an EU Digital COVID Certificate<br/>for iOS, tvOS, watchOS and macOS
+    A Swift Package to decode, verify and validate EU Digital COVID Certificates<br/>for iOS, tvOS, watchOS and macOS
 </p>
 
 ## Disclaimer
