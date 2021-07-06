@@ -69,14 +69,16 @@ let package = Package(
         .testTarget(
             name: "EUDCCDecoderTests",
             dependencies: [
-                "EUDCCDecoder"
+                "EUDCCDecoder",
+                "EUDCC"
             ]
         ),
         .testTarget(
             name: "EUDCCVerifierTests",
             dependencies: [
                 "EUDCCVerifier",
-                "EUDCCDecoder"
+                "EUDCCDecoder",
+                "EUDCC"
             ]
         ),
         .testTarget(

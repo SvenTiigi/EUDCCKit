@@ -83,5 +83,8 @@ import EUDCCValidator
 let validator = EUDCCValidator()
 
 // Validate EU Digital COVID Certificate
-let validationResult = validator.validate(eudcc: eudcc)
+let validationResult = validator.validate(
+    eudcc: eudcc,
+    rule: !(.isTest || .isRecovery) && .isVaccination && .hasAllVaccinationDoses
+)
 ```
