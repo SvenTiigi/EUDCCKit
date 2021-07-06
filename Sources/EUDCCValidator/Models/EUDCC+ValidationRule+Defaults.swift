@@ -112,4 +112,56 @@ public extension EUDCC.ValidationRule {
             )
     }
     
+    /// Is Test valid
+    /// - Parameters:
+    ///   - maximumHoursPast: The maximum hours past since date of sample collection. Default value `PCR: 72 | RAPID: 48`
+    ///   - calendar: The Calendar that should be used. Default value `.current`
+    static func isTestValid(
+        maximumHoursPast: @escaping (EUDCC.Test.TestType.WellKnownValue) -> Int = { $0 == .pcr ? 72 : 48 },
+        using calendar: Calendar = .current
+    ) -> Self {
+        .isTest
+            && .init(tag: "isTestValid") { eudcc in
+                // Verify Test and TestType WellKnownValue is available
+                guard let test = eudcc.test,
+                      let testTypeWellKnownValue = test.typeOfTest.wellKnownValue else {
+                    // Otherwise return false
+                    return false
+                }
+                // Verify valid until Date is available
+                guard let testIsValidUntilDate = calendar.date(
+                    byAdding: .hour,
+                    value: maximumHoursPast(testTypeWellKnownValue),
+                    to: test.dateOfSampleCollection
+                ) else {
+                    // Otherwise return false
+                    return false
+                }
+                // Verify current Date is less or equal to the valid until Date
+                return Date() <= testIsValidUntilDate
+            }
+    }
+    
+}
+
+// MARK: - EUDCC Recovery
+
+public extension EUDCC.ValidationRule {
+    
+    /// Is Recovery valid
+    static var isRecoveryValid: Self {
+        .isRecovery
+            && .init(tag: "isRecoveryValid") { eudcc in
+                // Verify Recovery is available
+                guard let recovery = eudcc.recovery else {
+                    // Otherwise return false
+                    return false
+                }
+                // Initialize valid Date Range
+                let validDateRange = recovery.certificateValidFrom...recovery.certificateValidUntil
+                // Return Bool value if current Date is contained in valid Date Range
+                return validDateRange.contains(.init())
+            }
+    }
+    
 }
