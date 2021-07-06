@@ -37,13 +37,13 @@ public extension EUDCC.ValidationRule {
     
 }
 
-// MARK: - EUDCC Vaccination ValidationRule
+// MARK: - EUDCC is Vaccination complete
 
 public extension EUDCC.ValidationRule {
     
     /// Has received all vaccination doses
-    static var hasAllVaccinationDoses: Self {
-        .compare(
+    static var isVaccinationComplete: Self {
+        isVaccination && .compare(
             value: \.vaccination?.doseNumber,
             to: .keyPath(\.vaccination?.totalSeriesOfDoses),
             operator: ==,
