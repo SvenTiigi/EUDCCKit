@@ -1,12 +1,16 @@
-# EU Digital COVID Certificate Kit (EUDCCKit)
+<h1 align="center">EU Digital COVID Certificate Kit</h1>
 
-A Swift Package to decode, verify and validate an EU Digital COVID Certificate
+<p align="center">
+    A Swift Package to decode, verify and validate an EU Digital COVID Certificate for iOS, tvOS, watchOS and macOS
+</p>
 
-> Disclaimer: This is not an offical implementation of the EU Digital COVID Certificate Kit
+## Disclaimer
+
+> This is not an offical implementation of the EU Digital COVID Certificate
 
 ## Usage
 
-The `EUDCCKit` itself is splitted up in four separate libraries.
+The `EUDCCKit` Swift Package bundelds up four distinct libraries.
 
 ### EUDCC
 
