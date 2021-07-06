@@ -57,9 +57,18 @@ public extension EUDCCValidator {
     
     /// The EUDCC default ValidationRule
     static var defaultValidationRule: EUDCC.ValidationRule {
-        .if(.isVaccination, then: .isFullyImmunized())
-            || .if(.isTest, then: .isTestedNegative && .isTestValid())
-            || .if(.isRecovery, then: .isRecoveryValid)
+        .if(
+            .isVaccination,
+            then: .isFullyImmunized(),
+            else: .if(
+                .isTest,
+                then: .isTestedNegative && .isTestValid(),
+                else: .if(
+                    .isRecovery,
+                    then: .isRecoveryValid
+                )
+            )
+        )
     }
     
 }
