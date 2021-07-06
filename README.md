@@ -8,6 +8,26 @@
 
 > This is not an offical implementation of the EU Digital COVID Certificate
 
+## Features
+
+- [x] Easily decode an EU Digital COVID Certificate 🧾
+- [x] Verify cryptographic signature 🔐
+- [x] Certificate validation ✅
+
+## Installation
+
+### Swift Package Manager
+
+To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/SvenTiigi/EUDCCKit.git", from: "0.0.1")
+]
+```
+
+Or navigate to your Xcode project then select `Swift Packages`, click the “+” icon and search for `EUDCCKit`.
+
 ## Usage
 
 The `EUDCCKit` Swift Package is made of four distinct libraries to decode, verify and validate an EU Digital COVID Certificate.
