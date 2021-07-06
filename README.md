@@ -87,4 +87,13 @@ let validationResult = validator.validate(
     eudcc: eudcc,
     rule: !(.isTest || .isRecovery) && .isVaccination && .hasAllVaccinationDoses
 )
+
+// Switch on validation result
+switch validationResult {
+case .succes:
+    // Successfully validated EU Digital COVID Certificate
+    print("Successfully validated")
+case .failure(let validationError):
+    // Validation failure
+    print("Validation failed", validationError)
 ```
