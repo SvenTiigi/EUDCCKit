@@ -90,7 +90,7 @@ let validationResult = validator.validate(
 
 // Switch on validation result
 switch validationResult {
-case .succes:
+case .success:
     // Successfully validated EU Digital COVID Certificate
     print("Successfully validated")
 case .failure(let validationError):
