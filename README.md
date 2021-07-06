@@ -10,7 +10,7 @@
 
 ## Usage
 
-The `EUDCCKit` Swift Package bundelds up four distinct libraries.
+The `EUDCCKit` Swift Package is made of four distinct libraries to decode, verify and validate an EU Digital COVID Certificate.
 
 ### EUDCC
 
