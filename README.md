@@ -19,7 +19,7 @@ The `EUDCC` library contains the model definition of the EU Digital COVID Certif
 ```swift
 import EUDCC
 
-// Acces to the core model definition 
+// The EU Digital COVID Certificate model
 let eudcc: EUDCC
 ```
 
