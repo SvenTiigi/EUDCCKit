@@ -59,14 +59,14 @@ The `EUDCCDecoder` library provides an `EUDCCDecoder` object which is capabale o
 ```swift
 import EUDCCDecoder
 
-// The contents of the scanned Digital COVID Certificate QR-Code
-let covidCertificateQRCode = "HC1:..."
+// Initialize an EUDCCDecoder
+let decoder = EUDCCDecoder()
 
-// Decode contents of QR-Code
-let decodeResult = EUDCCDecoder().decode(from: covidCertificateQRCode)
+// Decode contents of a COVID Certificate QR-Code
+let decodingResult = decoder.decode(from: "HC1:...")
 
-// Switch on Result
-switch decodeResult {
+// Switch on decoding result
+switch decodingResult {
 case .success(let eudcc):
     // Successfully decoded Digital COVID Certificate
     print("EU Digital COVID Certificate", eudcc)
@@ -89,8 +89,9 @@ let verifier = EUDCCVerifier(
 )
 
 // Verify EU Digital COVID Certificate
-verifier.verify(eudcc: eudcc) { result in
-    switch result {
+verifier.verify(eudcc: eudcc) { verificationResult in
+    // Switch on verification result
+    switch verificationResult {
     case .success(let signerCertificate):
         print("Cryptographically valid", signerCertificate)
     case .invald:
