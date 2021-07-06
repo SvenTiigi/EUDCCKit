@@ -19,7 +19,7 @@ private extension EUDCC {
     
     /// The EUDCC CodingKeys
     enum EUDCCCodingKeys: String, CodingKey {
-        case version = "ver"
+        case schmemaVersion = "ver"
         case dateOfBirth = "dob"
         case name = "nam"
         case vaccinations = "v"
@@ -51,9 +51,9 @@ extension EUDCC: Decodable {
         let eudccContainer = try topLevelContainer
             .nestedContainer(keyedBy: EUDCCVersionCodingKeys.self, forKey: .eudcc)
             .nestedContainer(keyedBy: EUDCCCodingKeys.self, forKey: .v1)
-        self.version = try eudccContainer.decode(
+        self.schmemaVersion = try eudccContainer.decode(
             String.self,
-            forKey: .version
+            forKey: .schmemaVersion
         )
         self.dateOfBirth = try eudccContainer.decode(
             forKey: .dateOfBirth,
@@ -136,7 +136,7 @@ extension EUDCC: Encodable {
         try topLevelContainer.encode(self.expiresAt, forKey: .expiresAt, using: EUDCCTimestampFormatter.default)
         var eudccVersionContainer = topLevelContainer.nestedContainer(keyedBy: EUDCCVersionCodingKeys.self, forKey: .eudcc)
         var eudccContainer = eudccVersionContainer.nestedContainer(keyedBy: EUDCCCodingKeys.self, forKey: .v1)
-        try eudccContainer.encode(self.version, forKey: .version)
+        try eudccContainer.encode(self.schmemaVersion, forKey: .schmemaVersion)
         try eudccContainer.encode(self.dateOfBirth, forKey: .dateOfBirth, using: EUDCCDateFormatter.default)
         try eudccContainer.encode(self.name, forKey: .name)
         switch self.content {

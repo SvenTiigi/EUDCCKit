@@ -16,8 +16,8 @@ public struct EUDCC: Hashable {
     /// The expiry Date
     public let expiresAt: Date
     
-    /// The version
-    public let version: String
+    /// The Schema version
+    public let schmemaVersion: String
     
     /// The date of birth
     public let dateOfBirth: Date
@@ -41,7 +41,7 @@ public struct EUDCC: Hashable {
     ///   - issuer: The issuer
     ///   - issuedAt: The issued at Date
     ///   - expiresAt: The expiry Date
-    ///   - version: The version
+    ///   - schmemaVersion: The Schema version
     ///   - dateOfBirth: The date of birth
     ///   - name: The Name
     ///   - content: The Content
@@ -51,7 +51,7 @@ public struct EUDCC: Hashable {
         issuer: String,
         issuedAt: Date,
         expiresAt: Date,
-        version: String,
+        schmemaVersion: String,
         dateOfBirth: Date,
         name: Name,
         content: Content,
@@ -61,7 +61,7 @@ public struct EUDCC: Hashable {
         self.issuer = issuer
         self.issuedAt = issuedAt
         self.expiresAt = expiresAt
-        self.version = version
+        self.schmemaVersion = schmemaVersion
         self.dateOfBirth = dateOfBirth
         self.name = name
         self.content = content

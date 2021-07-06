@@ -45,6 +45,21 @@ public extension EUDCC {
     
 }
 
+// MARK: - Full-Name
+
+public extension EUDCC.Name {
+    
+    /// The full name
+    var fullName: String {
+        let formatter = PersonNameComponentsFormatter()
+        var components = PersonNameComponents()
+        components.givenName = self.firstName
+        components.familyName = self.lastName
+        return formatter.string(from: components)
+    }
+    
+}
+
 // MARK: - Codable
 
 extension EUDCC.Name: Codable {

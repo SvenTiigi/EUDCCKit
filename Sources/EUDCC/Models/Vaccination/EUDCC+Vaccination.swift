@@ -10,28 +10,28 @@ public extension EUDCC {
         // MARK: Properties
         
         /// Disease or agent targeted
-        public let diseaseAgentTargeted: String
+        public let diseaseAgentTargeted: DiseaseAgentTargeted
         
-        /// Vaccine or prophylaxis
-        public let vaccineOrProphylaxis: String
+        /// Type of the vaccine or prophylaxis used.
+        public let vaccineOrProphylaxis: VaccineOrProphylaxis
         
-        /// Vaccine medicinal product
-        public let vaccineMedicinalProduct: String
+        /// Medicinal product used for this specific dose of vaccination
+        public let vaccineMedicinalProduct: VaccineMedicinalProduct
         
-        /// Vaccine Marketing Authorization Holder
-        public let vaccineMarketingAuthorizationHolder: String
+        /// Vaccine marketing authorisation holder or manufacturer
+        public let vaccineMarketingAuthorizationHolder: VaccineMarketingAuthorizationHolder
         
-        /// Dose Number
+        /// Number in a series of doses
         public let doseNumber: Int
         
-        /// Total Series of Doses
+        /// The overall number of doses in the series
         public let totalSeriesOfDoses: Int
         
         /// Date of Vaccination
         public let dateOfVaccination: Date
         
-        /// Country of Vaccination
-        public let countryOfVaccination: String
+        /// Member State or third country in which the vaccine was administered
+        public let countryOfVaccination: Country
         
         /// Certificate Issuer
         public let certificateIssuer: String
@@ -45,23 +45,23 @@ public extension EUDCC {
         /// - Parameters:
         ///   - diseaseAgentTargeted: Disease or agent targeted
         ///   - vaccineOrProphylaxis: Vaccine or prophylaxis
-        ///   - vaccineMedicinalProduct: Vaccine medicinal product
-        ///   - vaccineMarketingAuthorizationHolder: Vaccine Marketing Authorization Holder
-        ///   - doseNumber: Dose Number
-        ///   - totalSeriesOfDoses: Total Series of Doses
+        ///   - vaccineMedicinalProduct: Medicinal product used for this specific dose of vaccination
+        ///   - vaccineMarketingAuthorizationHolder: Vaccine marketing authorisation holder or manufacturer
+        ///   - doseNumber: Number in a series of doses
+        ///   - totalSeriesOfDoses: The overall number of doses in the series
         ///   - dateOfVaccination: Date of Vaccination
-        ///   - countryOfVaccination: Country of Vaccination
+        ///   - countryOfVaccination: Member State or third country in which the vaccine was administered
         ///   - certificateIssuer: Certificate Issuer
         ///   - certificateIdentifier: Unique Certificate Identifier (UVCI)
         public init(
-            diseaseAgentTargeted: String,
-            vaccineOrProphylaxis: String,
-            vaccineMedicinalProduct: String,
-            vaccineMarketingAuthorizationHolder: String,
+            diseaseAgentTargeted: DiseaseAgentTargeted,
+            vaccineOrProphylaxis: VaccineOrProphylaxis,
+            vaccineMedicinalProduct: VaccineMedicinalProduct,
+            vaccineMarketingAuthorizationHolder: VaccineMarketingAuthorizationHolder,
             doseNumber: Int,
             totalSeriesOfDoses: Int,
             dateOfVaccination: Date,
-            countryOfVaccination: String,
+            countryOfVaccination: Country,
             certificateIssuer: String,
             certificateIdentifier: String
         ) {
@@ -103,14 +103,14 @@ extension EUDCC.Vaccination: Codable {
     /// - Parameter decoder: The decoder to read data from.
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.diseaseAgentTargeted = try container.decode(String.self, forKey: .diseaseAgentTargeted)
-        self.vaccineOrProphylaxis = try container.decode(String.self, forKey: .vaccineOrProphylaxis)
-        self.vaccineMedicinalProduct = try container.decode(String.self, forKey: .vaccineMedicinalProduct)
-        self.vaccineMarketingAuthorizationHolder = try container.decode(String.self, forKey: .vaccineMarketingAuthorizationHolder)
+        self.diseaseAgentTargeted = try container.decode(EUDCC.DiseaseAgentTargeted.self, forKey: .diseaseAgentTargeted)
+        self.vaccineOrProphylaxis = try container.decode(VaccineOrProphylaxis.self, forKey: .vaccineOrProphylaxis)
+        self.vaccineMedicinalProduct = try container.decode(VaccineMedicinalProduct.self, forKey: .vaccineMedicinalProduct)
+        self.vaccineMarketingAuthorizationHolder = try container.decode(VaccineMarketingAuthorizationHolder.self, forKey: .vaccineMarketingAuthorizationHolder)
         self.doseNumber = try container.decode(Int.self, forKey: .doseNumber)
         self.totalSeriesOfDoses = try container.decode(Int.self, forKey: .totalSeriesOfDoses)
         self.dateOfVaccination = try container.decode(forKey: .dateOfVaccination, using: EUDCCDateFormatter.default)
-        self.countryOfVaccination = try container.decode(String.self, forKey: .countryOfVaccination)
+        self.countryOfVaccination = try container.decode(EUDCC.Country.self, forKey: .countryOfVaccination)
         self.certificateIssuer = try container.decode(String.self, forKey: .certificateIssuer)
         self.certificateIdentifier = try container.decode(String.self, forKey: .certificateIdentifier)
     }

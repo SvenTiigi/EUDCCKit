@@ -9,14 +9,14 @@ public extension EUDCC {
         
         // MARK: Properties
         
-        /// Disease or Agent Targeted
-        public let diseaseAgentTargeted: String
+        /// Disease or agent targeted
+        public let diseaseAgentTargeted: DiseaseAgentTargeted
         
         /// Date of first positive NAA test result
         public let dateOfFirstPositiveTestResult: Date
         
         /// Country of Test
-        public let countryOfTest: String
+        public let countryOfTest: Country
         
         /// Certificate issuer
         public let certificateIssuer: String
@@ -32,7 +32,7 @@ public extension EUDCC {
         
         /// Creates a new instance of `EUDCC.Recovery`
         /// - Parameters:
-        ///   - diseaseAgentTargeted: Disease or Agent Targeted
+        ///   - diseaseAgentTargeted: Disease or agent targeted
         ///   - dateOfFirstPositiveTestResult: Date of first positive NAA test result
         ///   - countryOfTest: Country of Test
         ///   - certificateIssuer: Certificate issuer
@@ -40,9 +40,9 @@ public extension EUDCC {
         ///   - certificateValidUntil: Certificate Valid Until
         ///   - certificateIdentifier: Unique Certificate Identifier (UVCI)
         public init(
-            diseaseAgentTargeted: String,
+            diseaseAgentTargeted: DiseaseAgentTargeted,
             dateOfFirstPositiveTestResult: Date,
-            countryOfTest: String,
+            countryOfTest: Country,
             certificateIssuer: String,
             certificateValidFrom: Date,
             certificateValidUntil: Date,
@@ -80,9 +80,9 @@ extension EUDCC.Recovery: Codable {
     /// - Parameter decoder: The decoder to read data from.
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.diseaseAgentTargeted = try container.decode(String.self, forKey: .diseaseAgentTargeted)
+        self.diseaseAgentTargeted = try container.decode(EUDCC.DiseaseAgentTargeted.self, forKey: .diseaseAgentTargeted)
         self.dateOfFirstPositiveTestResult = try container.decode(forKey: .dateOfFirstPositiveTestResult, using: EUDCCDateFormatter.default)
-        self.countryOfTest = try container.decode(String.self, forKey: .countryOfTest)
+        self.countryOfTest = try container.decode(EUDCC.Country.self, forKey: .countryOfTest)
         self.certificateIssuer = try container.decode(String.self, forKey: .certificateIssuer)
         self.certificateValidFrom = try container.decode(forKey: .certificateValidFrom, using: EUDCCDateFormatter.default)
         self.certificateValidUntil = try container.decode(forKey: .certificateValidUntil, using: EUDCCDateFormatter.default)
