@@ -43,6 +43,15 @@ public extension EUDCC.Test.TestType {
     
 }
 
+// MARK: - WellKnownValue+Convenience
+
+public extension EUDCC.Test.TestType.WellKnownValue {
+    
+    /// PCR represented by `nucleicACIDAmplificationWithProbeDetection` case
+    static let pcr: Self = .nucleicACIDAmplificationWithProbeDetection
+    
+}
+
 // MARK: - Codable
 
 extension EUDCC.Test.TestType: Codable {
