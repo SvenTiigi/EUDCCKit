@@ -96,4 +96,5 @@ case .success:
 case .failure(let validationError):
     // Validation failure
     print("Validation failed", validationError)
+}
 ```
