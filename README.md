@@ -20,7 +20,7 @@
 
 ## Disclaimer
 
-> This is not an offical implementation of the EU Digital COVID Certificate
+> The EUDCCKit is not an offical implementation of the EU Digital COVID Certificate
 
 ## Features
 
