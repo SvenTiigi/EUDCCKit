@@ -10,7 +10,7 @@ public extension EUDCC.ValidationRule {
     static prefix func ! (
         rule: EUDCC.ValidationRule
     ) -> Self {
-        .init(tag: "NOT \(rule.tag)") { eudcc in
+        .init(tag: "!(\(rule.tag))") { eudcc in
             !rule(eudcc)
         }
     }
@@ -29,7 +29,7 @@ public extension EUDCC.ValidationRule {
         lhs: Self,
         rhs: Self
     ) -> Self {
-        .init(tag: "\(lhs.tag) AND \(rhs.tag)") { eudcc in
+        .init(tag: "\(lhs.tag) && \(rhs.tag)") { eudcc in
             lhs(eudcc) && rhs(eudcc)
         }
     }
@@ -48,7 +48,7 @@ public extension EUDCC.ValidationRule {
         lhs: Self,
         rhs: Self
     ) -> Self {
-        .init(tag: "\(lhs.tag) OR \(rhs.tag)") { eudcc in
+        .init(tag: "\(lhs.tag) || \(rhs.tag)") { eudcc in
             lhs(eudcc) || rhs(eudcc)
         }
     }

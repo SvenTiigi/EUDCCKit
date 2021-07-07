@@ -9,14 +9,20 @@ public extension EUDCC.ValidationRule {
     /// - Parameters:
     ///   - condition: The ValidationRule that will be evaluated
     ///   - then: The then ValidationRule
-    ///   - else: The optional ValidationRule. Default value `true`
+    ///   - else: The optional ValidationRule
     static func `if`(
         _ condition: Self,
         then: Self,
-        else: Self = .init(tag: "true") { _ in true }
+        else: Self
     ) -> Self {
         .init(
-            tag: "if-\(condition.tag)-then-\(then.tag)-else-\(`else`.tag)"
+            tag: """
+            if \(condition.tag) {
+                \(then.tag)
+            } else {
+                \(`else`.tag)
+            }
+            """
         ) { eudcc in
             condition(eudcc) ? then(eudcc) : `else`(eudcc)
         }

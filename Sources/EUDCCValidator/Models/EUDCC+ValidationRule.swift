@@ -50,6 +50,31 @@ public extension EUDCC {
     
 }
 
+// MARK: - Default
+
+public extension EUDCC.ValidationRule {
+    
+    /// The default `EUDCC.ValidationRule`
+    static var `default`: Self {
+        .if(
+            .isVaccination,
+            then: .isFullyImmunized()
+                && .isWellKnownVaccineMedicinalProduct
+                && !.isVaccinationExpired(),
+            else: .if(
+                .isTest,
+                then: .isTestedNegative && .isTestValid(),
+                else: .if(
+                    .isRecovery,
+                    then: .isRecoveryValid,
+                    else: .constant(false)
+                )
+            )
+        )
+    }
+    
+}
+
 // MARK: - Equatable
 
 extension EUDCC.ValidationRule: Equatable {

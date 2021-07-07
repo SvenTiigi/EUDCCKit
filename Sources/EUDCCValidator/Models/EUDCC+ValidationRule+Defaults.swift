@@ -1,6 +1,20 @@
 import EUDCC
 import Foundation
 
+// MARK: - Constant
+
+public extension EUDCC.ValidationRule {
+    
+    /// Constant ValidationRule that will always return the given Bool result value
+    /// - Parameter result: The Bool resul value
+    static func constant(
+        _ result: Bool
+    ) -> Self {
+        .init(tag: "\(result)") { _ in result }
+    }
+    
+}
+
 // MARK: - EUDCC Content Type
 
 public extension EUDCC.ValidationRule {
@@ -61,30 +75,68 @@ public extension EUDCC.ValidationRule {
         using calendar: Calendar = .current
     ) -> Self {
         .isVaccinationComplete
-            && .init(
+            && .compare(
+                lhsDate: .currentDate,
+                rhsDate: .init(
+                    .keyPath(\.vaccination?.dateOfVaccination),
+                    adding: (.day, minimumDaysPast)
+                ),
+                operator: >,
+                using: calendar,
                 tag: "isFullyImmunized-after-\(minimumDaysPast)-days"
+            )
+    }
+    
+    /// Validates if the vaccination expired by comparing if the current Date
+    /// is greater than the date of vaccination added by the `maximumDaysSinceVaccinationDate`
+    /// - Parameters:
+    ///   - maximumDaysSinceVaccinationDate: The maximum days since date of vaccination. Default value `365`
+    ///   - calendar: The Calendar. Default value `.current`
+    static func isVaccinationExpired(
+        maximumDaysSinceVaccinationDate: Int = 365,
+        using calendar: Calendar = .current
+    ) -> Self {
+        .isVaccination
+            && .compare(
+                lhsDate: .currentDate,
+                rhsDate: .init(
+                    .keyPath(\.vaccination?.dateOfVaccination),
+                    adding: (.hour, maximumDaysSinceVaccinationDate)
+                ),
+                operator: >,
+                using: calendar,
+                tag: "is-vaccination-expired-\(maximumDaysSinceVaccinationDate)-days"
+            )
+    }
+    
+    /// Validates if EUDCC contains a Vaccination and the `VaccineMedicinalProduct` value
+    /// is contained in the  `WellKnownValue`enumeration
+    static var isWellKnownVaccineMedicinalProduct: Self {
+        .vaccineMedicinalProductIsOneOf(
+            EUDCC.Vaccination.VaccineMedicinalProduct.WellKnownValue.allCases
+        )
+    }
+    
+    /// Validates if the `VaccineMedicinalProduct` is contained in the given Sequence of VaccineMedicinalProduct WellKnownValues
+    /// - Parameter validVaccineMedicinalProducts: The VaccineMedicinalProduct WellKnownValue Sequence
+    static func vaccineMedicinalProductIsOneOf<Vaccines: Sequence>(
+        _ validVaccineMedicinalProducts: Vaccines
+    ) -> Self where Vaccines.Element == EUDCC.Vaccination.VaccineMedicinalProduct.WellKnownValue {
+        .isVaccination
+            && .init(
+                tag: "isVaccineMedicinalProduct-one-of-\(validVaccineMedicinalProducts)"
             ) { eudcc in
-                // Verify Vaccination is available
-                guard let vaccination = eudcc.vaccination else {
+                // Verify WellKnownValue of VaccineMedicinalProduct is available
+                guard let vaccineMedicinalProductWellKnownValue = eudcc.vaccination?.vaccineMedicinalProduct.wellKnownValue else {
                     // Otherwise return false
                     return false
                 }
-                // Verify fully immunized Date is available from calendar
-                guard let fullyImmunizedDate = calendar.date(
-                    byAdding: .day,
-                    value: minimumDaysPast,
-                    to: vaccination.dateOfVaccination
-                ) else {
-                    // Otherwise return false
-                    return false
-                }
-                // Current Date must be greater than the fully immunized Date
-                return Date() > fullyImmunizedDate
+                // Return result if VaccineMedicinalProduct WellKnownValue is contained in the given Sequence
+                return validVaccineMedicinalProducts.contains(vaccineMedicinalProductWellKnownValue)
             }
     }
     
 }
-
 
 // MARK: - EUDCC Test
 
@@ -121,25 +173,24 @@ public extension EUDCC.ValidationRule {
         using calendar: Calendar = .current
     ) -> Self {
         .isTest
-            && .init(tag: "isTestValid") { eudcc in
-                // Verify Test and TestType WellKnownValue is available
-                guard let test = eudcc.test,
-                      let testTypeWellKnownValue = test.typeOfTest.wellKnownValue else {
-                    // Otherwise return false
-                    return false
-                }
-                // Verify valid until Date is available
-                guard let testIsValidUntilDate = calendar.date(
-                    byAdding: .hour,
-                    value: maximumHoursPast(testTypeWellKnownValue),
-                    to: test.dateOfSampleCollection
-                ) else {
-                    // Otherwise return false
-                    return false
-                }
-                // Verify current Date is less or equal to the valid until Date
-                return Date() <= testIsValidUntilDate
-            }
+            && .compare(
+                lhsDate: .currentDate,
+                rhsDate: .init(
+                    .keyPath(\.test?.dateOfSampleCollection),
+                    adding: { eudcc in
+                        // Verify TestType WellKnownValue is available
+                        guard let testTypeWellKnownValue = eudcc.test?.typeOfTest.wellKnownValue else {
+                            // Otherwise return nil
+                            return nil
+                        }
+                        // Return adding hour with maximum hours past for TestType WellKnownValue
+                        return (.hour, maximumHoursPast(testTypeWellKnownValue))
+                    }
+                ),
+                operator: <=,
+                using: calendar,
+                tag: "isTestValid"
+            )
     }
     
 }
