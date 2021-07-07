@@ -59,11 +59,11 @@ public extension EUDCCValidator {
     /// - Parameters:
     ///   - eudcc: The EUDCC that should be validated
     ///   - rule: The ValidationRule that should be used to validate the EUDCC. Default value `.default`
-    /// - Returns: The
+    /// - Returns: The ValidationResult
     func validate(
         eudcc: EUDCC,
         rule: EUDCC.ValidationRule = .default
-    ) -> Result<Void, Failure> {
+    ) -> ValidationResult {
         // Verify ValidationRule satisfies
         guard rule(eudcc) else {
             // Otherwise return failure with unsatisfied ValidationRule
