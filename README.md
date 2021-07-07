@@ -85,15 +85,15 @@ import EUDCCVerifier
 
 // Initialize an EUDDCCVerifier
 let verifier = EUDCCVerifier(
-    certificateService: EUCentralEUDCCSignerCertificateService()
+    trustService: EUCentralEUDCCTrustService()
 )
 
 // Verify EU Digital COVID Certificate
 verifier.verify(eudcc: eudcc) { verificationResult in
     // Switch on verification result
     switch verificationResult {
-    case .success(let signerCertificate):
-        print("Cryptographically valid", signerCertificate)
+    case .success(let trustCertificate):
+        print("Cryptographically valid", trustCertificate)
     case .invald:
         print("Invalid EUDCC")
     case .failure(let error):

@@ -1,12 +1,12 @@
 import EUDCC
 import Foundation
 
-// MARK: - EUDCC+SignerCertificate
+// MARK: - EUDCC+TrustCertificate
 
 public extension EUDCC {
     
-    /// An EUDCC SignerCertificate
-    struct SignerCertificate: Codable, Hashable {
+    /// An EUDCC TrustCertificate
+    struct TrustCertificate: Codable, Hashable {
         
         // MARK: Properties
         
@@ -18,7 +18,7 @@ public extension EUDCC {
         
         // MARK: Initializer
         
-        /// Creates a new instance of `EUDCC.SignerCertificate`
+        /// Creates a new instance of `EUDCC.TrustCertificate`
         /// - Parameters:
         ///   - keyID: The KeyID
         ///   - contents: The contents of the certificate
@@ -36,7 +36,7 @@ public extension EUDCC {
 
 // MARK: - PublicKey
 
-public extension EUDCC.SignerCertificate {
+public extension EUDCC.TrustCertificate {
     
     /// The PublicKey from SignerCertificate contents if available
     var publicKey: SecKey? {

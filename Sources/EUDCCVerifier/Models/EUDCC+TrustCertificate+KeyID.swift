@@ -2,11 +2,11 @@ import EUDCC
 import Foundation
 import SwiftCBOR
 
-// MARK: - EUDCC+KeyID
+// MARK: - KeyID
 
-public extension EUDCC.SignerCertificate {
+public extension EUDCC.TrustCertificate {
     
-    /// The EUDCC KeyID
+    /// The EUDCC TrustCertificate KeyID
     struct KeyID: Codable, Hashable {
         
         // MARK: Properties
@@ -16,7 +16,7 @@ public extension EUDCC.SignerCertificate {
         
         // MARK: Initializer
         
-        /// Creates a new instance of `EUDCC.KeyID`
+        /// Creates a new instance of `EUDCC.TrustCertificate.KeyID`
         /// - Parameter rawValue: The key id String raw value
         public init(rawValue: String) {
             self.rawValue = rawValue
@@ -28,9 +28,9 @@ public extension EUDCC.SignerCertificate {
 
 // MARK: Convenience Initializer with CryptographicSignature
 
-public extension EUDCC.SignerCertificate.KeyID {
+public extension EUDCC.TrustCertificate.KeyID {
     
-    /// Creats a new instance of `EUDCC.KeyID`
+    /// Creats a new instance of `EUDCC.TrustCertificate.KeyID`
     /// - Parameter cryptographicSignature: The EUDCC CryptographicSignature
     init?(
         cryptographicSignature: EUDCC.CryptographicSignature

@@ -13,11 +13,11 @@ public extension EUDCC {
         /// The Signature
         public let signature: Data
         
-        /// TH SignedPayload
+        /// The SignedPayload
         public let signedPayload: SignedPayload
         
-        /// The SignerCertificate
-        public let signerCertificate: SignerCertificate
+        /// The TrustCertificate
+        public let trustCertificate: TrustCertificate
         
         // MARK: Initializer
         
@@ -25,15 +25,15 @@ public extension EUDCC {
         /// - Parameters:
         ///   - signature: The EUDCC Signature
         ///   - signedPayload: The EUDCC SignedPayload
-        ///   - signerCertificate: The EUDCC SignerCertificate
+        ///   - trustCertificate: The EUDCC TrustCertificate
         public init(
             signature: Data,
-            signedPayload: EUDCC.SignedPayload,
-            signerCertificate: EUDCC.SignerCertificate
+            signedPayload: SignedPayload,
+            trustCertificate: TrustCertificate
         ) {
             self.signature = signature
             self.signedPayload = signedPayload
-            self.signerCertificate = signerCertificate
+            self.trustCertificate = trustCertificate
         }
         
     }
@@ -47,8 +47,8 @@ public extension EUDCC.VerificationCandidate {
     /// Verify Candidate
     /// - Returns: The verification result
     func verify() -> Bool {
-        // Verify Public Key of SignerCertificate is available
-        guard let publicKey = self.signerCertificate.publicKey else {
+        // Verify Public Key of TrustCertificate is available
+        guard let publicKey = self.trustCertificate.publicKey else {
             // Oterhwise return false
             return false
         }

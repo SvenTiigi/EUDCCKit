@@ -1,10 +1,10 @@
 import EUDCC
 import Foundation
 
-// MARK: - EUCentralEUDCCSignerCertificateService
+// MARK: - EUCentralEUDCCTrustService
 
-/// The EU Central EUDCC SignerCertificate Service
-public final class EUCentralEUDCCSignerCertificateService {
+/// The EU Central EUDCC TrustService
+public final class EUCentralEUDCCTrustService {
     
     // MARK: Properties
     
@@ -23,21 +23,21 @@ public final class EUCentralEUDCCSignerCertificateService {
     
 }
 
-// MARK: - EUDCCSignerCertificateService
+// MARK: - EUDCCTrustService
 
-extension EUCentralEUDCCSignerCertificateService: EUDCCSignerCertificateService {
+extension EUCentralEUDCCTrustService: EUDCCTrustService {
     
-    /// Retrieve SignerCertificates
+    /// Retrieve EUDCC TrustCertificate
     /// - Parameter completion: The completion closure
     public func getCertificates(
-        completion: @escaping (Result<[EUDCC.SignerCertificate], Error>) -> Void
+        completion: @escaping (Result<[EUDCC.TrustCertificate], Error>) -> Void
     ) {
         // Fetch Certificates
-        self.fetchCertificates { signerCertificates in
+        self.fetchCertificates { trustCertificates in
             // Dispatch on Main-Queue
             DispatchQueue.main.async {
                 // Complete with success
-                completion(.success(signerCertificates))
+                completion(.success(trustCertificates))
             }
         }
     }
@@ -46,17 +46,17 @@ extension EUCentralEUDCCSignerCertificateService: EUDCCSignerCertificateService 
 
 // MARK: - Fetch Certificates
 
-extension EUCentralEUDCCSignerCertificateService {
+extension EUCentralEUDCCTrustService {
     
     /// Fetch Certificates recursively
     /// - Parameters:
     ///   - resumeToken: The current Resume-Token
-    ///   - signerCertificates: The SignerCertificates
+    ///   - trustCertificates: The TrustCertificates
     ///   - completion: The completion closure
     func fetchCertificates(
         resumeToken: String? = nil,
-        signerCertificates: [EUDCC.SignerCertificate] = .init(),
-        completion: @escaping ([EUDCC.SignerCertificate]) -> Void
+        trustCertificates: [EUDCC.TrustCertificate] = .init(),
+        completion: @escaping ([EUDCC.TrustCertificate]) -> Void
     ) {
         // Initialize URLRequest
         var urlRequest = URLRequest(url: self.url)
@@ -75,33 +75,33 @@ extension EUCentralEUDCCSignerCertificateService {
             // Verify HTTPResponse is available and succeessfull
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode == 200 else {
-                // Otherwise complete with current SignerCertificates
-                return completion(signerCertificates)
+                // Otherwise complete with current TrustCertificates
+                return completion(trustCertificates)
             }
             // Verify KeyID and Data is available
             guard let keyId = httpResponse.allHeaderFields["X-ID"] as? String,
                   let data = data else {
-                // Otherwise complete with current SignerCertificates
-                return completion(signerCertificates)
+                // Otherwise complete with current TrustCertificates
+                return completion(trustCertificates)
             }
             // Retrieve certificates contents as String from payload
             let certificateContents = String(decoding: data, as: UTF8.self)
-            // Initialize SignerCertificate
-            let signerCertificate = EUDCC.SignerCertificate(
+            // Initialize TrustCertificates
+            let trustCertificate = EUDCC.TrustCertificate(
                 keyID: .init(rawValue: keyId),
                 contents: certificateContents
             )
-            // Append SignerCertificate to current SignerCertificates
-            let signerCertificates = signerCertificates + [signerCertificate]
+            // Append TrustCertificate to current TrustCertificates
+            let trustCertificates = trustCertificates + [trustCertificate]
             // Verify the next ResumeToken is available
             guard let nextResumeToken = httpResponse.allHeaderFields["X-RESUME-TOKEN"] as? String else {
                 // Otherwise complete with current SignerCertificates
-                return completion(signerCertificates)
+                return completion(trustCertificates)
             }
             // Re-Fetch Certificates with next ResumeToken
             self?.fetchCertificates(
                 resumeToken: nextResumeToken,
-                signerCertificates: signerCertificates,
+                trustCertificates: trustCertificates,
                 completion: completion
             )
         }

@@ -1,10 +1,10 @@
 import EUDCC
 import Foundation
 
-// MARK: - RobertKochInstituteEUDCCSignerCertificateService
+// MARK: - RobertKochInstituteEUDCCTrustService
 
-/// The Robert-Koch-Institute EUDCC SignerCertificate Service
-public final class RobertKochInstituteEUDCCSignerCertificateService {
+/// The Robert-Koch-Institute EUDCC TrustService
+public final class RobertKochInstituteEUDCCTrustService {
     
     // MARK: Properties
     
@@ -25,18 +25,18 @@ public final class RobertKochInstituteEUDCCSignerCertificateService {
 
 // MARK: - TrustList & TrustCertificate
 
-extension RobertKochInstituteEUDCCSignerCertificateService {
+extension RobertKochInstituteEUDCCTrustService {
     
     /// The TrustList Response
-    struct TrustList: Codable {
+    struct RKITrustList: Codable {
         
         /// The TrustCertificates
-        let certificates: [TrustCertificate]
+        let certificates: [RKITrustCertificate]
         
     }
 
     /// A TrustCertificate
-    struct TrustCertificate: Codable {
+    struct RKITrustCertificate: Codable {
         
         /// The certificate type
         let certificateType: String
@@ -65,7 +65,7 @@ extension RobertKochInstituteEUDCCSignerCertificateService {
 
 // MARK: - Failure
 
-public extension RobertKochInstituteEUDCCSignerCertificateService {
+public extension RobertKochInstituteEUDCCTrustService {
     
     /// The Failure
     enum Failure: Error {
@@ -79,14 +79,14 @@ public extension RobertKochInstituteEUDCCSignerCertificateService {
     
 }
 
-// MARK: - EUDCCSignerCertificateService
+// MARK: - EUDCCTrustService
 
-extension RobertKochInstituteEUDCCSignerCertificateService: EUDCCSignerCertificateService {
+extension RobertKochInstituteEUDCCTrustService: EUDCCTrustService {
     
-    /// Retrieve SignerCertificates
+    /// Retrieve EUDCC TrustCertificate
     /// - Parameter completion: The completion closure
     public func getCertificates(
-        completion: @escaping (Result<[EUDCC.SignerCertificate], Error>) -> Void
+        completion: @escaping (Result<[EUDCC.TrustCertificate], Error>) -> Void
     ) {
         // Perform DataTask
         let dataTask = URLSession.shared.dataTask(
@@ -111,11 +111,11 @@ extension RobertKochInstituteEUDCCSignerCertificateService: EUDCCSignerCertifica
                 }
             }
             // Declare TrustList
-            let trustList: TrustList
+            let trustList: RKITrustList
             do {
                 // Try to decode TrustList
                 trustList = try JSONDecoder().decode(
-                    TrustList.self,
+                    RKITrustList.self,
                     from: .init(responseComponents[1].utf8)
                 )
             } catch {
@@ -124,8 +124,8 @@ extension RobertKochInstituteEUDCCSignerCertificateService: EUDCCSignerCertifica
                     completion(.failure(Failure.decodingError(error)))
                 }
             }
-            // Map TrustCertificates to SignerCertificates
-            let signerCertificates: [EUDCC.SignerCertificate] = trustList
+            // Map TrustList to TrustCertificates
+            let trustCertificates: [EUDCC.TrustCertificate] = trustList
                 .certificates
                 .map { certificate in
                     .init(
@@ -135,7 +135,7 @@ extension RobertKochInstituteEUDCCSignerCertificateService: EUDCCSignerCertifica
                 }
             // Complete with success
             DispatchQueue.main.async {
-                completion(.success(signerCertificates))
+                completion(.success(trustCertificates))
             }
         }
         // Execute Request
