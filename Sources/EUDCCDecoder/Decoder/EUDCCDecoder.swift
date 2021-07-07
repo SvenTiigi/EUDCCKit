@@ -73,14 +73,28 @@ public extension EUDCCDecoder {
 
 public extension EUDCCDecoder {
     
-    /// Decode EUDCC from EUDCC String representation
-    /// - Parameter eudccStringRepresentation: The EUDCC String representation
+    /// Decode EUDCC from EUDCC Base-45 encoded `Data`
+    /// - Parameter base45EncodedData: The EUDCC Base-45 encoded `Data`
     /// - Returns: A Result contains either the successfully decoded EUDCC or an DecodingError
     func decode(
-        from eudccStringRepresentation: String
+        from base45EncodedData: Data
+    ) -> Result<EUDCC, DecodingError> {
+        self.decode(
+            from: .init(
+                decoding: base45EncodedData,
+                as: UTF8.self
+            )
+        )
+    }
+    
+    /// Decode EUDCC from EUDCC Base-45 encoded `String`
+    /// - Parameter base45EncodedString: The EUDCC Base-45 encoded `String`
+    /// - Returns: A Result contains either the successfully decoded EUDCC or an DecodingError
+    func decode(
+        from base45EncodedString: String
     ) -> Result<EUDCC, DecodingError> {
         // Drop EUDCC Prefix
-        self.dropPrefixIfNeeded(eudccStringRepresentation)
+        self.dropPrefixIfNeeded(base45EncodedString)
             // Decode Base-45
             .flatMap(self.decodeBase45)
             // Decompress Data
@@ -97,7 +111,7 @@ public extension EUDCCDecoder {
                 var eudcc = eudcc
                 // Set Base-45 Representation
                 eudcc.mutate(
-                    base45Representation: eudccStringRepresentation
+                    base45Representation: base45EncodedString
                 )
                 // Return updated EUDCC
                 return eudcc
