@@ -29,7 +29,7 @@ extension EUCentralEUDCCTrustService: EUDCCTrustService {
     
     /// Retrieve EUDCC TrustCertificate
     /// - Parameter completion: The completion closure
-    public func getCertificates(
+    public func getTrustCertificates(
         completion: @escaping (Result<[EUDCC.TrustCertificate], Error>) -> Void
     ) {
         // Fetch Certificates

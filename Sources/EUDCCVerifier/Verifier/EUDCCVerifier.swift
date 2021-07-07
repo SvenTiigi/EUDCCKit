@@ -67,8 +67,8 @@ public extension EUDCCVerifier {
         eudcc: EUDCC,
         completion: @escaping (VerificationResult) -> Void
     ) {
-        // Retrieve Certificates from TrustService
-        self.trustService.getCertificates { result in
+        // Retrieve TrustCertificates from TrustService
+        self.trustService.getTrustCertificates { result in
             /// Complete with VerificationResult
             /// - Parameter verificationResult: The VerificationResult
             func complete(
