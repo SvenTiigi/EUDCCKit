@@ -94,28 +94,30 @@ public extension EUDCCDecoder {
         from base45EncodedString: String
     ) -> Result<EUDCC, DecodingError> {
         // Drop EUDCC Prefix
-        self.dropPrefixIfNeeded(base45EncodedString)
-            // Decode Base-45
-            .flatMap(self.decodeBase45)
-            // Decompress Data
-            .flatMap(self.decompress)
-            // Decode CBOR
-            .flatMap(self.decodeCBOR)
-            // Decode COSE
-            .flatMap(self.decodeCOSE)
-            // Decode EUDCC
-            .flatMap(self.decodeEUDCC)
+        self.dropPrefixIfNeeded(
+            from: base45EncodedString
+        )
+        // Decode Base-45
+        .flatMap(self.decodeBase45)
+        // Decompress Data
+        .flatMap(self.decompress)
+        // Decode CBOR
+        .flatMap(self.decodeCBOR)
+        // Decode COSE
+        .flatMap(self.decodeCOSE)
+        // Decode EUDCC
+        .flatMap(self.decodeEUDCC)
+        // Set Base-45 Representation
+        .map { eudcc in
+            // Initialize mutable EUDCC
+            var eudcc = eudcc
             // Set Base-45 Representation
-            .map { eudcc in
-                // Initialize mutable EUDCC
-                var eudcc = eudcc
-                // Set Base-45 Representation
-                eudcc.mutate(
-                    base45Representation: base45EncodedString
-                )
-                // Return updated EUDCC
-                return eudcc
-            }
+            eudcc.mutate(
+                base45Representation: base45EncodedString
+            )
+            // Return updated EUDCC
+            return eudcc
+        }
     }
     
 }
@@ -125,21 +127,21 @@ public extension EUDCCDecoder {
 private extension EUDCCDecoder {
     
     /// Drop `EUDCC` prefix if needed
-    /// - Parameter input: The input String
+    /// - Parameter string: The String
     func dropPrefixIfNeeded(
-        _ input: String
+        from string: String
     ) -> Result<String, DecodingError> {
-        // Initialize mutable input
-        var input = input
+        // Initialize mutable String
+        var string = string
         // Check if starts with EUDCC prefix
-        if input.starts(with: self.eudccPrefix) {
+        if string.starts(with: self.eudccPrefix) {
             // Drop EUDCC prefix
-            input = .init(
-                input.dropFirst(self.eudccPrefix.count)
+            string = .init(
+                string.dropFirst(self.eudccPrefix.count)
             )
         }
         // Return success with dropped EUDCC prefix
-        return .success(input)
+        return .success(string)
     }
     
 }
@@ -149,13 +151,13 @@ private extension EUDCCDecoder {
 private extension EUDCCDecoder {
     
     /// Decode a given String to a valid Base-45 Data object
-    /// - Parameter input: The input String
+    /// - Parameter base45EncodedString: The Base-45 encoded String
     func decodeBase45(
-        _ input: String
+        base45EncodedString: String
     ) -> Result<Data, DecodingError> {
         do {
             // Try to decode String to Base-45 Data
-            return .success(try .init(base45Encoded: input))
+            return .success(try .init(base45Encoded: base45EncodedString))
         } catch {
             // Return Base45 Decoding Error
             return .failure(.base45DecodingError(error))
@@ -169,11 +171,11 @@ private extension EUDCCDecoder {
 private extension EUDCCDecoder {
     
     /// Decompress Data
-    /// - Parameter input: The input Data object
+    /// - Parameter data: The Data object that should be decompressed
     func decompress(
-        _ input: Data
+        data: Data
     ) -> Result<Data, DecodingError> {
-        .success(input.decompressed())
+        .success(data.decompressed())
     }
     
 }
@@ -183,19 +185,19 @@ private extension EUDCCDecoder {
 private extension EUDCCDecoder {
     
     /// Decode CBOR
-    /// - Parameter input: The input Data object
+    /// - Parameter data: The Data object used to decode CBOR
     func decodeCBOR(
-        _ input: Data
+        data: Data
     ) -> Result<SwiftCBOR.CBOR, DecodingError> {
         // Initialize CBORDecoder
         let cborDecoder = SwiftCBOR.CBORDecoder(
-            input: [UInt8](input)
+            input: [UInt8](data)
         )
         do {
             // Try to decodeItem and verify CBOR is available
             guard let cbor = try cborDecoder.decodeItem() else {
                 // Otherwise return malformed CBOR Error
-                return .failure(.malformedCBORError(input))
+                return .failure(.malformedCBORError(data))
             }
             // Return success with decoded CBOR
             return .success(cbor)
@@ -212,12 +214,12 @@ private extension EUDCCDecoder {
 private extension EUDCCDecoder {
     
     /// Decode COSE
-    /// - Parameter input: The input CBOR
+    /// - Parameter input: The CBOR object
     func decodeCOSE(
-        _ input: SwiftCBOR.CBOR
-    ) -> Result<COSE, DecodingError> {
+        cbor: SwiftCBOR.CBOR
+    ) -> Result<EUDCC.CryptographicSignature, DecodingError> {
         // Verify Content is available
-        guard case .tagged(_, let value) = input,
+        guard case .tagged(_, let value) = cbor,
               case .array(let contents) = value else {
             return .failure(.cborProcessingError(.contentMissing))
         }
@@ -241,12 +243,16 @@ private extension EUDCCDecoder {
               case .byteString(let signature) = contents[3] else {
             return .failure(.cborProcessingError(.signatureParameterMissing))
         }
-        // Return success with COSE
+        // Return success with EUDCC CryptographicSignature
         return .success(.init(
-            protected: protected,
-            unprotected: unprotected,
-            payload: payload,
-            signature: signature
+            protected: .init(protected),
+            unprotected: .init(
+                uniqueKeysWithValues: unprotected.map { key, value in
+                    (.init(key.encode()), .init(value.encode()))
+                }
+            ),
+            payload: .init(payload),
+            signature: .init(signature)
         ))
     }
     
@@ -257,15 +263,17 @@ private extension EUDCCDecoder {
 private extension EUDCCDecoder {
     
     /// Decode EUDCC
-    /// - Parameter input: The input COSE
+    /// - Parameter cryptographicSignature: The EUDCC CryptographicSignature
     func decodeEUDCC(
-        _ input: COSE
+        cryptographicSignature: EUDCC.CryptographicSignature
     ) -> Result<EUDCC, DecodingError> {
         // Declare CBOR Payload
         let cborPayload: SwiftCBOR.CBOR
         do {
             // Try to decode COSE Payload as CBOR and verify Item is available
-            guard let cbor = try SwiftCBOR.CBORDecoder(input: input.payload).decodeItem() else {
+            guard let cbor = try SwiftCBOR.CBORDecoder(
+                input: [UInt8](cryptographicSignature.payload)
+            ).decodeItem() else {
                 // Otherwise return COSE Payload JSON Data Error
                 return .failure(.coseCBORDecodingError(nil))
             }
@@ -303,18 +311,9 @@ private extension EUDCCDecoder {
             // Return EUDCC JSONDecoding Error
             return .failure(.eudccJSONDecodingError(error))
         }
-        // Mutate CryptographicSignature from COSE
+        // Mutate CryptographicSignature
         eudcc.mutate(
-            cryptographicSignature: .init(
-                protected: .init(input.protected),
-                unprotected: .init(
-                    uniqueKeysWithValues: input.unprotected.map { key, value in
-                        (.init(key.encode()), .init(value.encode()))
-                    }
-                ),
-                payload: .init(input.payload),
-                signature: .init(input.signature)
-            )
+            cryptographicSignature: cryptographicSignature
         )
         // Return success with decoded EUDCC
         return .success(eudcc)
