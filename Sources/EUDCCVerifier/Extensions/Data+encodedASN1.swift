@@ -4,10 +4,16 @@ import Foundation
 
 extension Data {
     
+    /// Encode Data as ASN.1
+    /// - Parameter digestLengthInBytes: The digest length in bytes. Default value `32`
+    /// - Returns: The ASN.1 encoded Data if available
     func encodedASN1(
         digestLengthInBytes: Int = 32
     ) -> Data? {
         func encodeInt(_ data: [UInt8]) -> [UInt8] {
+            guard !data.isEmpty else {
+                return data
+            }
             let firstBitIsSet: UInt8 = 0b10000000
             let tagInteger: UInt8 = 0x02
             if data[0] >= firstBitIsSet {
@@ -25,7 +31,7 @@ extension Data {
                 numBits = numBits >> 1
                 bits += 1
             }
-            var bytes: [UInt8] = []
+            var bytes: [UInt8] = .init()
             var num = num
             while num > 0 {
                 bytes += [UInt8(num & 0b11111111)]
