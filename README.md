@@ -50,6 +50,16 @@ import EUDCC
 
 // The EU Digital COVID Certificate model
 let eudcc: EUDCC
+
+// Access content of EUDCC
+switch eudcc.content {
+case .vaccination(let vaccination):
+    print("Vaccination", vaccination)
+case .test(let test):
+    print("Test", test)
+case .recovery(let recovery):
+    print("Recovery", recovery)
+}
 ```
 
 ### EUDDCDecoder
