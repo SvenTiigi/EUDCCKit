@@ -69,7 +69,7 @@ case .recovery(let recovery):
 
 ### EUDDCDecoder
 
-The `EUDCCDecoder` library provides an `EUDCCDecoder` object which is capabale of decoding an Base-45 string reperesentation of the EU Digital COVID Certificate which is mostly embedded in a QR-Code.
+The `EUDCCDecoder` library provides an `EUDCCDecoder` object which is capabale of decoding a Base-45 string reperesentation of the EU Digital COVID Certificate which is mostly embedded in a QR-Code.
 
 ```swift
 import EUDCCDecoder
