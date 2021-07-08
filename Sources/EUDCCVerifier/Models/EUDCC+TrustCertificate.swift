@@ -1,5 +1,6 @@
 import EUDCC
 import Foundation
+import Security
 
 // MARK: - EUDCC+TrustCertificate
 
@@ -39,12 +40,12 @@ public extension EUDCC {
 public extension EUDCC.TrustCertificate {
     
     /// The PublicKey from SignerCertificate contents if available
-    var publicKey: SecKey? {
+    var publicKey: Security.SecKey? {
         Data(
             base64Encoded: self.contents
         )
-        .flatMap { SecCertificateCreateWithData(nil, $0 as CFData) }
-        .flatMap(SecCertificateCopyKey)
+        .flatMap { Security.SecCertificateCreateWithData(nil, $0 as CFData) }
+        .flatMap(Security.SecCertificateCopyKey)
     }
     
 }

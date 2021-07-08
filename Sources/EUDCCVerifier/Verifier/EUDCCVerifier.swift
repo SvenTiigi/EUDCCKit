@@ -1,5 +1,6 @@
 import EUDCC
 import Foundation
+import Security
 
 // MARK: - EUDCCVerifier
 
@@ -146,12 +147,74 @@ public extension EUDCCVerifier {
                 )
             }
         // Verify the first VerificationCandidate that is verified successfully is available
-        guard let matchingVerificationCandidate = verificationCandidates.first(where: { $0.verify() }) else {
+        guard let matchingVerificationCandidate = verificationCandidates.first(where: self.verify) else {
             // Otherwise complete with failure as no VerificationCandidate verified successfully
             return .invalid
         }
         // Complete with success
         return .success(matchingVerificationCandidate.trustCertificate)
+    }
+    
+}
+
+// MARK: - Verify EUDCC VerificationCandidate
+
+public extension EUDCCVerifier {
+    
+    /// Verify EUDCC VerificationCandidate
+    /// - Parameter candidate: The EUDCC VerificationCandidate that should be verified
+    /// - Returns: Bool value if VerificationCandidate verified successfully
+    func verify(
+        candidate: EUDCC.VerificationCandidate
+    ) -> Bool {
+        // Verify Public Key of TrustCertificate is available
+        guard let publicKey = candidate.trustCertificate.publicKey else {
+            // Oterhwise return false
+            return false
+        }
+        // Initialize mutable Signature
+        var signature = candidate.signature
+        // Declare SecKeyAlgorithm
+        let algorithm: Security.SecKeyAlgorithm
+        // Check PublicKey Algorithm
+        if Security.SecKeyIsAlgorithmSupported(
+            publicKey,
+            .verify,
+            .ecdsaSignatureMessageX962SHA256
+        ) {
+            // Use X962
+            algorithm = .ecdsaSignatureMessageX962SHA256
+            // Verify encoded ASN1 Signature is available
+            guard let encodedASN1Signature = signature.encodedASN1() else {
+                // Otherwise return falses
+                return false
+            }
+            // Mutate Signature with encoded ASN1
+            signature = encodedASN1Signature
+        } else if Security.SecKeyIsAlgorithmSupported(
+            publicKey,
+            .verify, .rsaSignatureMessagePSSSHA256
+        ) {
+            // Use PSS
+            algorithm = .rsaSignatureMessagePSSSHA256
+        } else {
+            // Otherwise return false as Algorithm is not supported
+            return false
+        }
+        // Declare Error
+        var error: Unmanaged<CFError>?
+        // Verify Signature
+        let verificationResult = Security.SecKeyVerifySignature(
+            publicKey,
+            algorithm,
+            candidate.signedPayload.rawValue as NSData,
+            signature as NSData,
+            &error
+        )
+        // Release Error
+        error?.release()
+        // Return VerificationResult
+        return verificationResult
     }
     
 }
