@@ -15,9 +15,9 @@ public struct EUDCCVerifier {
     // MARK: Initializer
     
     /// Creates a new instance of `EUDCCVerifier`
-    /// - Parameter trustService: The EUDCCTrustService. Default value `EUCentralEUDCCTrustService()`
+    /// - Parameter trustService: The EUDCCTrustService
     public init(
-        trustService: EUDCCTrustService = EUCentralEUDCCTrustService()
+        trustService: EUDCCTrustService
     ) {
         self.trustService = trustService
     }
