@@ -165,7 +165,7 @@ let test: EUDCC.Test? = eudcc.test
 let recovery: EUDCC.Recovery? = eudcc.recovery
 ```
 
-### Well-Known-Value
+#### Well-Known-Value
 
 Each of the following objects are exposing a `WellKnownValue` enumeration which can be used to retrieve more detailed information about a certain value:
 
@@ -192,7 +192,7 @@ switch vaccineMedicinalProduct.wellKnownValue {
 }
 ```
 
-### Encoding
+#### Encoding
 
 The `EUDCC` contains two properties `cryptographicSignature` and `base45Representation` which are convenience objects that are not an offical part of the EU Digital COVID Certificate JSON Schema. 
 
