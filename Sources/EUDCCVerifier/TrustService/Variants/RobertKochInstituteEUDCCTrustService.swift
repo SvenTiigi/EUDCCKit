@@ -83,7 +83,7 @@ public extension RobertKochInstituteEUDCCTrustService {
 
 extension RobertKochInstituteEUDCCTrustService: EUDCCTrustService {
     
-    /// Retrieve EUDCC TrustCertificate
+    /// Retrieve EUDCC TrustCertificates
     /// - Parameter completion: The completion closure
     public func getTrustCertificates(
         completion: @escaping (Result<[EUDCC.TrustCertificate], Error>) -> Void
