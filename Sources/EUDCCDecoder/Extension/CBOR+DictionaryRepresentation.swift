@@ -57,6 +57,12 @@ private extension SwiftCBOR.CBOR {
             return .init(int)
         case .negativeInt(let int):
             return "-\(int + 1)"
+        case .half(let float):
+            return .init(float)
+        case .float(let float):
+            return .init(float)
+        case .double(let double):
+            return .init(double)
         default:
             return nil
         }
@@ -72,31 +78,31 @@ private extension SwiftCBOR.CBOR {
     var dictionaryValue: Any? {
         switch self {
         case .boolean(let boolValue):
-            return boolValue as Any
+            return boolValue
         case .unsignedInt(let uIntValue):
-            return Int(uIntValue) as Any
+            return Int(uIntValue)
         case .negativeInt(let negativeIntValue):
-            return -Int(negativeIntValue) - 1 as Any
+            return -Int(negativeIntValue) - 1
         case .double(let doubleValue):
-            return doubleValue as Any
+            return doubleValue
         case .float(let floatValue):
-            return floatValue as Any
+            return floatValue
         case .half(let halfValue):
-            return halfValue as Any
+            return halfValue
         case .simple(let simpleValue):
-            return simpleValue as Any
+            return simpleValue
         case .byteString(let byteStringValue):
-            return byteStringValue as Any
+            return byteStringValue
         case .date(let dateValue):
-            return dateValue as Any
+            return dateValue
         case .utf8String(let stringValue):
-            return stringValue as Any
+            return stringValue
         case .array(let arrayValue):
             return arrayValue.map(\.dictionaryValue)
         case .map(let mapValue):
-            return mapValue.convert() as Any
+            return mapValue.convert()
         case .null, .undefined, .tagged, .break:
-            return nil as Any?
+            return nil
         }
     }
     
