@@ -16,21 +16,24 @@ public extension EUDCC {
         
         // MARK: Initializer
         
-        /// Creats a new instance of `EUDCC.SignedPayload`
-        /// - Parameter cryptographicSignature: The EUDCC CryptographicSignature
+        /// Creates a new instance of `EUDCC.SignedPayload`
+        /// - Parameters:
+        ///   - prefix: The SignedPayload prefix. Default value `Signature1`
+        ///   - cryptographicSignature: The EUDCC CryptographicSignature
         public init(
+            prefix: String = "Signature1",
             cryptographicSignature: EUDCC.CryptographicSignature
         ) {
             self.rawValue = .init(
                 SwiftCBOR.CBOR.encode(
                     [
-                        "Signature1",
+                        .init(stringLiteral: prefix),
                         SwiftCBOR.CBOR
-                            .byteString([UInt8](cryptographicSignature.protected)),
+                            .byteString(.init(cryptographicSignature.protected)),
                         SwiftCBOR.CBOR
                             .byteString(.init()),
                         SwiftCBOR.CBOR
-                            .byteString([UInt8](cryptographicSignature.payload))
+                            .byteString(.init(cryptographicSignature.payload))
                     ]
                 )
             )
