@@ -45,13 +45,16 @@ public extension EUDCC {
     
 }
 
-// MARK: - Full-Name
+// MARK: - Formatted
 
 public extension EUDCC.Name {
     
-    /// The full name
-    var fullName: String {
-        let formatter = PersonNameComponentsFormatter()
+    /// Retrieve the formatted full name
+    /// - Parameter formatter: The PersonNameComponentsFormatter. Default value `.init()`
+    /// - Returns: The formatted full name
+    func formatted(
+        using formatter: PersonNameComponentsFormatter = .init()
+    ) -> String {
         var components = PersonNameComponents()
         components.givenName = self.firstName
         components.familyName = self.lastName
