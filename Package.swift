@@ -60,32 +60,38 @@ let package = Package(
                 "EUDCC"
             ]
         ),
+        .target(
+            name: "EUDCCKitTests",
+            dependencies: [
+                "EUDCC",
+                "EUDCCDecoder",
+                "EUDCCValidator",
+                "EUDCCVerifier"
+            ],
+            path: "Tests/_EUDCCKitTests"
+        ),
         .testTarget(
             name: "EUDCCTests",
             dependencies: [
-                "EUDCC"
+                "EUDCCKitTests"
             ]
         ),
         .testTarget(
             name: "EUDCCDecoderTests",
             dependencies: [
-                "EUDCCDecoder",
-                "EUDCC"
+                "EUDCCKitTests"
             ]
         ),
         .testTarget(
             name: "EUDCCVerifierTests",
             dependencies: [
-                "EUDCCVerifier",
-                "EUDCCDecoder",
-                "EUDCC"
+                "EUDCCKitTests"
             ]
         ),
         .testTarget(
             name: "EUDCCValidatorTests",
             dependencies: [
-                "EUDCCValidator",
-                "EUDCC"
+                "EUDCCKitTests"
             ]
         )
     ]

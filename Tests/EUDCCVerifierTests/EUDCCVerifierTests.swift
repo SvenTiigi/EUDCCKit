@@ -1,6 +1,5 @@
-import XCTest
-import EUDCCDecoder
+import EUDCCKitTests
 @testable import EUDCCVerifier
 
-final class EUDCCVerifierTests: XCTestCase {
+final class EUDCCVerifierTests: EUDCCKitTests {
 }
