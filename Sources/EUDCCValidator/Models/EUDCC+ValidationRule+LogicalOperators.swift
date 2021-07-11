@@ -29,7 +29,7 @@ public extension EUDCC.ValidationRule {
         lhs: Self,
         rhs: Self
     ) -> Self {
-        .init(tag: "\(lhs.tag) && \(rhs.tag)") { eudcc in
+        .init(tag: "(\(lhs.tag) && \(rhs.tag))") { eudcc in
             lhs(eudcc) && rhs(eudcc)
         }
     }
@@ -48,7 +48,7 @@ public extension EUDCC.ValidationRule {
         lhs: Self,
         rhs: Self
     ) -> Self {
-        .init(tag: "\(lhs.tag) || \(rhs.tag)") { eudcc in
+        .init(tag: "(\(lhs.tag) || \(rhs.tag))") { eudcc in
             lhs(eudcc) || rhs(eudcc)
         }
     }
