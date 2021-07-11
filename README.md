@@ -146,7 +146,247 @@ case .failure(let validationError):
 
 ## Advanced
 
->tbd...
+### EUDCC
+
+#### Content
+
+Beside the `content` property of an `EUDCC` you can make use of the following convenience properties to check if the `EUDCC` contains a vaccination, test or recovery object.
+
+```swift
+import EUDCC
+
+// Vaccination
+let vaccination: EUDCC.Vaccination? = eudcc.vaccination
+
+// Test
+let test: EUDCC.Test? = eudcc.test
+
+// Recovery
+let recovery: EUDCC.Recovery? = eudcc.recovery
+```
+
+### Well-Known-Value
+
+Each of the following objects are exposing a `WellKnownValue` enumeration which can be used to retrieve more detailed information about a certain value:
+
+- `EUDCC.DiseaseAgentTargeted`
+- `EUDCC.Test.TestResult`
+- `EUDCC.Test.TestType`
+- `EUDCC.Vaccination.VaccineMarketingAuthorizationHolder`
+- `EUDCC.Vaccination.VaccineMedicinalProduct`
+- `EUDCC.Vaccination.VaccineOrProphylaxis`
+
+```swift
+import EUDCC
+
+let vaccineMedicinalProduct: EUDCC.Vaccination.VaccineMedicinalProduct
+
+// Switch on WellKnownValue of VaccineMedicinalProduct
+switch vaccineMedicinalProduct.wellKnownValue {
+    case .covid19VaccineModerna:
+        break
+    case .vaxzevria:
+        break
+    default:
+        break
+}
+```
+
+### Encoding
+
+The `EUDCC` contains two properties `cryptographicSignature` and `base45Representation` which are convenience objects that are not an offical part of the EU Digital COVID Certificate JSON Schema. 
+
+If you wish to skip those properties when encoding an `EUDCC` you can set the following `userInfo` configuration to a `JSONEncoder`.
+
+```swift
+import EUDCC
+
+let encoder = JSONEncoder()
+
+encoder.userInfo = [
+    // Skip encoding CryptographicSignature
+    EUDCC.EncoderUserInfoKeys.skipCryptographicSignature: true,
+    // Skip encoding Base-45 representation
+    EUDCC.EncoderUserInfoKeys.skipBase45Representation: true,
+]
+
+let jsonData = try encoder.encode(eudcc)
+```
+
+### EUDDCDecoder
+
+#### Decoding
+
+The `EUDCCDecoder` supports decoding a Base-45 encoded `String` and `Data` object.
+
+```swift
+import EUDCCDecoder
+
+let eudccDecoder = EUDCCDecoder()
+
+// Decode from Base-45 encoded String
+let eudccBase45EncodedString: String
+let stringDecodingResult = eudccDecoder.decode(
+    from: eudccBase45EncodedString
+)
+
+// Decode from Base-45 encoded Data
+let eudccBase45EncodedData: Data
+let dataDecodingResult = eudccDecoder.decode(
+    from: eudccBase45EncodedData
+)
+```
+
+#### Convenience decoding
+
+By importing the `EUDCCDecoder` library the `EUDCC` object will be extended with a static `decode` function.
+
+```swift
+import EUDCCDecoder
+
+let decodingResult = EUDCC.decode(from: "HC1:...")
+```
+
+### EUDCCVerifier
+
+#### EUDCCTrustService
+
+In order to verify an `EUDCC` the `EUDCCVerifier` needs to be instantiated with an instance of an `EUDCCTrustService` which is used to retrieve the trust certificates.
+
+```swift
+import EUDCC
+import EUDCCVerifier
+
+struct SpecificEUDCCTrustService: EUDCCTrustService {
+    
+    /// Retrieve EUDCC TrustCertificates
+    /// - Parameter completion: The completion closure
+    func getTrustCertificates(
+        completion: @escaping (Result<[EUDCC.TrustCertificate], Error>) -> Void
+    ) {
+        // TODO: Retrieve TrustCertificates and invoke completion handler
+    }
+    
+}
+
+let eudccVerifier = EUDCCVerifier(
+    trustService: SpecificEUDCCTrustService()
+)
+```
+
+The `EUDCCKit` comes along with two pre defined `EUDCCTrustService` implementations:
+
+- `EUCentralEUDCCTrustService`
+- `RobertKochInstituteEUDCCTrustService`
+
+#### Convenience verification
+
+By importing the `EUDCCVerifier` library the `EUDCC` object will be extended with a `verify` function.
+
+```swift
+import EUDCC
+import EUDCCVerifier
+
+let eudcc: EUDCC
+
+eudcc.verify(
+    using: EUDCCVerifier(
+        trustService: EUCentralEUDCCTrustService()
+    )
+) { verificationResult in
+    switch verificationResult {
+    case .success(let trustCertificate):
+        break
+    case .invald:
+        break
+    case .failure(let error):
+        break
+    }
+}
+```
+
+### EUDCCValidator
+
+#### ValidationRule
+
+An `EUDCC` can be validated by using an `EUDCCValidator` and a given `EUDCC.ValidationRule`. An `EUDCC.ValidationRule` can be initialized with a simple closure wich takes in an `EUDCC` and returns a `Bool` whether the validation succeed or failed.
+
+```swift
+import EUDCC
+import EUDCCValidator
+
+// Simple EUDCC ValidationRule instantiation
+let validationRule = EUDCC.ValidationRule { eudcc in
+    // Process EUDCC and return Bool result
+}
+
+// EUDCC ValidationRule with Tag in order to uniquely identify a ValidationRule
+let isVaccinationComplete = EUDCC.ValidationRule(
+    tag: "is-vaccination-complete"
+) { eudcc in
+    eudcc.vaccination?.doseNumber == eudcc.vaccination?.totalSeriesOfDoses
+}
+```
+
+The `EUDCCKit` comes along with many pre defined `EUDCC.ValidationRule` like the following ones.
+
+```swift
+import EUDCC
+import EUDCCValidator
+
+let eudcc: EUDCC
+let validator = EUDCCValidator()
+
+// Is fully immunized
+validator.validate(
+    eudcc: eudcc, 
+    rule: .isFullyImmunized(minimumDaysPast: 15)
+)
+
+// Is tested positive
+validator.validate(
+    eudcc: eudcc, 
+    rule: .isTestedPositive
+)
+```
+
+#### Logical/Conditional operators
+
+In order to create more complex rules each `EUDCC.ValidationRule` can be chained together by applying standard operators.
+
+```swift
+import EUDCC
+import EUDCCValidator
+
+let defaultValidationRule: EUDCC.ValidationRule = .if(
+    .isVaccination,
+    then: .isFullyImmunized() && .isWellKnownVaccineMedicinalProduct && !.isVaccinationExpired(),
+    else: .if(
+        .isTest,
+        then: .isTestedNegative && .isTestValid(),
+        else: .if(
+            .isRecovery,
+            then: .isRecoveryValid,
+            else: .constant(false)
+        )
+    )
+)
+```
+
+#### Convenience validation
+
+By importing the `EUDCCValidator` library the `EUDCC` object will be extended with a `validate` function.
+
+```swift
+import EUDCC
+import EUDCCValidator
+
+let eudcc: EUDCC
+
+let validationRule = eudcc.validate(
+    rule: .isWellKnownVaccineMedicinalProduct
+)
+```
 
 ## License
 
