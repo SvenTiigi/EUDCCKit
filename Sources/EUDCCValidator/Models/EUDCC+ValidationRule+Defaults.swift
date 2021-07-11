@@ -22,7 +22,7 @@ public extension EUDCC.ValidationRule {
     /// Has vaccination content ValidationRule
     static var isVaccination: Self {
         self.compare(
-            value: \.vaccination,
+            value: .keyPath(\.vaccination),
             to: .constant(nil),
             operator: !=,
             tag: "isVaccination"
@@ -32,7 +32,7 @@ public extension EUDCC.ValidationRule {
     /// Has test content ValidationRule
     static var isTest: Self {
         self.compare(
-            value: \.test,
+            value: .keyPath(\.test),
             to: .constant(nil),
             operator: !=,
             tag: "isTest"
@@ -42,7 +42,7 @@ public extension EUDCC.ValidationRule {
     /// Has recover content ValidationRule
     static var isRecovery: Self {
         self.compare(
-            value: \.recovery,
+            value: .keyPath(\.recovery),
             to: .constant(nil),
             operator: !=,
             tag: "isRecovery"
@@ -59,7 +59,7 @@ public extension EUDCC.ValidationRule {
     static var isVaccinationComplete: Self {
         .isVaccination
             && .compare(
-                value: \.vaccination?.doseNumber,
+                value: .keyPath(\.vaccination?.doseNumber),
                 to: .keyPath(\.vaccination?.totalSeriesOfDoses),
                 operator: ==,
                 tag: "isVaccinationComplete"
@@ -146,7 +146,7 @@ public extension EUDCC.ValidationRule {
     static var isTestedPositive: Self {
         .isTest
             && .compare(
-                value: \.test?.testResult.value,
+                value: .keyPath(\.test?.testResult.value),
                 to: .constant(EUDCC.Test.TestResult.WellKnownValue.positive.rawValue),
                 operator: ==,
                 tag: "isTestedPositive"
@@ -157,7 +157,7 @@ public extension EUDCC.ValidationRule {
     static var isTestedNegative: Self {
         .isTest
             && .compare(
-                value: \.test?.testResult.value,
+                value: .keyPath(\.test?.testResult.value),
                 to: .constant(EUDCC.Test.TestResult.WellKnownValue.negative.rawValue),
                 operator: ==,
                 tag: "isTestedNegative"

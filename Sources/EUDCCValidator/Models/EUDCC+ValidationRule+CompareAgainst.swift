@@ -47,14 +47,14 @@ public extension EUDCC.ValidationRule {
     ///   - tag: The Tag. Default value `.init()`
     /// - Returns: A ValidationRule
     static func compare<Value>(
-        value keyPath: KeyPath<EUDCC, Value>,
+        value: CompareAgainst<Value>,
         to compareAgainstValue: CompareAgainst<Value>,
         operator: @escaping (Value, Value) -> Bool,
         tag: Tag = .init()
     ) -> Self {
         .init(tag: tag) { eudcc in
             `operator`(
-                eudcc[keyPath: keyPath],
+                value.value(for: eudcc),
                 compareAgainstValue.value(for: eudcc)
             )
         }
