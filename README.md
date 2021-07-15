@@ -1,6 +1,6 @@
 <br/>
 <p align="center">
-    <img src="https://raw.githubusercontent.com/SvenTiigi/EUDCCKit/gh-pages/readme-assets/logo.png?token=ACZQQFRT2JVBFKYYJIN5OXTA55VN4" width="30%" alt="logo">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/EUDCCKit/gh-pages/readme-assets/logo.png?token=ACZQQFR2RIYY3YNGJLTAOEDA7GOBO" width="30%" alt="logo">
 </p>
 
 <h1 align="center">EU Digital COVID Certificate Kit</h1>
@@ -77,8 +77,11 @@ import EUDCCDecoder
 // Initialize an EUDCCDecoder
 let decoder = EUDCCDecoder()
 
-// Decode contents of a COVID Certificate QR-Code
-let decodingResult = decoder.decode(from: "HC1:...")
+// The Base-45 encoded EU Digital COVID Certificate from a QR-Code
+let qrCodeContent = "HC1:..."
+
+// Decode EUDCC from QR-Code
+let decodingResult = decoder.decode(from: qrCodeContent)
 
 // Switch on decoding result
 switch decodingResult {
