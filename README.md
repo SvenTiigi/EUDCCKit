@@ -13,6 +13,9 @@
    <a href="https://developer.apple.com/swift/">
       <img src="https://img.shields.io/badge/Swift-5.4-orange.svg?style=flat" alt="Swift 5.4">
    </a>
+    <a href="https://sventiigi.github.io/EUDCCKit">
+      <img src="https://github.com/SvenTiigi/EUDCCKit/blob/gh-pages/badge.svg" alt="Documentation">
+   </a>
    <a href="https://twitter.com/SvenTiigi/">
       <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
    </a>
