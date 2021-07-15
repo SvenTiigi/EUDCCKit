@@ -1,6 +1,6 @@
 <br/>
 <p align="center">
-    <img src="https://raw.githubusercontent.com/SvenTiigi/EUDCCKit/gh-pages/readme-assets/logo.png?token=ACZQQFR2RIYY3YNGJLTAOEDA7GOBO" width="30%" alt="logo">
+    <img src="https://raw.githubusercontent.com/SvenTiigi/EUDCCKit/gh-pages/readme-assets/logo.png" width="30%" alt="logo">
 </p>
 
 <h1 align="center">EU Digital COVID Certificate Kit</h1>
