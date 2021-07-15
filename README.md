@@ -67,6 +67,8 @@ case .recovery(let recovery):
 }
 ```
 
+> Head over to the [advanced section](https://github.com/SvenTiigi/EUDCCKit#eudcc-1) to learn more.
+
 ### EUDDCDecoder
 
 The `EUDCCDecoder` library provides an `EUDCCDecoder` object which is capabale of decoding a Base-45 string reperesentation of the EU Digital COVID Certificate which is mostly embedded in a QR-Code.
@@ -94,6 +96,8 @@ case .failure(let decodingError):
 }
 ```
 
+> Head over to the [advanced section](https://github.com/SvenTiigi/EUDCCKit#euddcdecoder-1) to learn more.
+
 ### EUDCCVerifier
 
 The `EUDCCVerifier` library provides an `EUDCCVerifier` object which can be used to verify the cryptographic signature of the EU Digital COVID Certificate.
@@ -119,6 +123,8 @@ verifier.verify(eudcc: eudcc) { verificationResult in
     }
 }
 ```
+
+> Head over to the [advanced section](https://github.com/SvenTiigi/EUDCCKit#eudccverifier-1) to learn more.
 
 ### EUDCCValidator
 
@@ -146,6 +152,8 @@ case .failure(let validationError):
     print("Validation failed", validationError)
 }
 ```
+
+> Head over to the [advanced section](https://github.com/SvenTiigi/EUDCCKit#eudccvalidator-1) to learn more.
 
 ## Advanced
 
