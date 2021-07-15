@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EUDCCVerifier Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/EUDCCVerifier" class="dashAnchor"></a>
+    <a title="EUDCCVerifier Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        EUDCCVerifier Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/EUCentralEUDCCTrustService.html">EUCentralEUDCCTrustService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RobertKochInstituteEUDCCTrustService.html">RobertKochInstituteEUDCCTrustService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RobertKochInstituteEUDCCTrustService/Failure.html">– Failure</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/EUDCCTrustService.html">EUDCCTrustService</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC.html">EUDCC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC.html#/s:5EUDCCAAV19EncoderUserInfoKeysO">– EncoderUserInfoKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Content.html">– Content</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Country.html">– Country</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/CryptographicSignature.html">– CryptographicSignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/DiseaseAgentTargeted.html">– DiseaseAgentTargeted</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Name.html">– Name</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Recovery.html">– Recovery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Test.html">– Test</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Vaccination.html">– Vaccination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/SignedPayload.html">– SignedPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/TrustCertificate.html">– TrustCertificate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/VerificationCandidate.html">– VerificationCandidate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/ValidationRule.html">– ValidationRule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCDecoder.html">EUDCCDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCDecoder/DecodingError.html">– DecodingError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCDecoder/CBORProcessingError.html">– CBORProcessingError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCValidator.html">EUDCCValidator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCValidator/Failure.html">– Failure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCVerifier.html">EUDCCVerifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCVerifier/VerificationResult.html">– VerificationResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCVerifier/Failure.html">– Failure</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>EUDCCVerifier</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EUDCCVerifier</span></code></pre>
+
+                </div>
+              </div>
+            <p>An EUDCC Verifier</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializer"></a>
+                <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Initializer"></a>
+                  <h3 class="section-name"><p>Initializer</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13EUDCCVerifierAAV12trustServiceAbA010EUDCCTrustC0_p_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(trustService:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13EUDCCVerifierAAV12trustServiceAbA010EUDCCTrustC0_p_tcfc">init(trustService:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance of <code>EUDCCVerifier</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">trustService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EUDCCTrustService.html">EUDCCTrustService</a></span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>trustService</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The EUDCCTrustService</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/VerificationResult"></a>
+                <a name="//apple_ref/swift/Section/VerificationResult" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/VerificationResult"></a>
+                  <h3 class="section-name"><p>VerificationResult</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13EUDCCVerifierAAV18VerificationResultO"></a>
+                    <a name="//apple_ref/swift/Enum/VerificationResult" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13EUDCCVerifierAAV18VerificationResultO">VerificationResult</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The VerificationResult</p>
+
+                        <a href="../Structs/EUDCCVerifier/VerificationResult.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">VerificationResult</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Failure"></a>
+                <a name="//apple_ref/swift/Section/Failure" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Failure"></a>
+                  <h3 class="section-name"><p>Failure</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13EUDCCVerifierAAV7FailureO"></a>
+                    <a name="//apple_ref/swift/Enum/Failure" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13EUDCCVerifierAAV7FailureO">Failure</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCCVerifier Failure</p>
+
+                        <a href="../Structs/EUDCCVerifier/Failure.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Failure</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Verify%20EUDCC"></a>
+                <a name="//apple_ref/swift/Section/Verify EUDCC" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Verify%20EUDCC"></a>
+                  <h3 class="section-name"><p>Verify EUDCC</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13EUDCCVerifierAAV6verify5eudcc10completiony5EUDCCAFV_yAB18VerificationResultOctF"></a>
+                    <a name="//apple_ref/swift/Method/verify(eudcc:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13EUDCCVerifierAAV6verify5eudcc10completiony5EUDCCAFV_yAB18VerificationResultOctF">verify(eudcc:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verify <code><a href="../Structs/EUDCC.html">EUDCC</a></code> and retrieve a <code><a href="../Structs/EUDCCVerifier/VerificationResult.html">VerificationResult</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">verify</span><span class="p">(</span>
+    <span class="nv">eudcc</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="p">,</span>
+    <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/EUDCCVerifier/VerificationResult.html">VerificationResult</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>eudcc</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Structs/EUDCC.html">EUDCC</a></code> that should be verified</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler taking in the <code><a href="../Structs/EUDCCVerifier/VerificationResult.html">VerificationResult</a></code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Verify%20against%20TrustCertificates"></a>
+                <a name="//apple_ref/swift/Section/Verify against TrustCertificates" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Verify%20against%20TrustCertificates"></a>
+                  <h3 class="section-name"><p>Verify against TrustCertificates</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13EUDCCVerifierAAV6verify5eudcc7againstAB18VerificationResultO5EUDCCAHV_xtSTRzAiAE16TrustCertificateV7ElementRtzlF"></a>
+                    <a name="//apple_ref/swift/Method/verify(eudcc:against:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13EUDCCVerifierAAV6verify5eudcc7againstAB18VerificationResultO5EUDCCAHV_xtSTRzAiAE16TrustCertificateV7ElementRtzlF">verify(eudcc:<wbr>against:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verify EUDCC against a given sequence of EUDCC TrustCertificates</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">verify</span><span class="o">&lt;</span><span class="kt">Certificates</span><span class="p">:</span> <span class="kt">Sequence</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">eudcc</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="p">,</span>
+    <span class="n">against</span> <span class="nv">trustCertificates</span><span class="p">:</span> <span class="kt">Certificates</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/EUDCCVerifier/VerificationResult.html">VerificationResult</a></span> <span class="k">where</span> <span class="kt">Certificates</span><span class="o">.</span><span class="kt">Element</span> <span class="o">==</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">TrustCertificate</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>eudcc</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The EUDCC</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>trustCertificates</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The sequence of EUDCC TrustCertificate</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A VerificationResult</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Verify%20EUDCC%20VerificationCandidate"></a>
+                <a name="//apple_ref/swift/Section/Verify EUDCC VerificationCandidate" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Verify%20EUDCC%20VerificationCandidate"></a>
+                  <h3 class="section-name"><p>Verify EUDCC VerificationCandidate</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13EUDCCVerifierAAV6verify9candidateSb5EUDCCAEVAAE21VerificationCandidateV_tF"></a>
+                    <a name="//apple_ref/swift/Method/verify(candidate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13EUDCCVerifierAAV6verify9candidateSb5EUDCCAEVAAE21VerificationCandidateV_tF">verify(candidate:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verify EUDCC VerificationCandidate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">verify</span><span class="p">(</span>
+    <span class="nv">candidate</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">VerificationCandidate</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>candidate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The EUDCC VerificationCandidate that should be verified</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Bool value if VerificationCandidate verified successfully</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-07-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

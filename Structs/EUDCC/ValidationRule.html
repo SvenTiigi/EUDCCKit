@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ValidationRule Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+    <script src="../../js/lunr.min.js" defer></script>
+    <script src="../../js/typeahead.jquery.js" defer></script>
+    <script src="../../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/ValidationRule" class="dashAnchor"></a>
+    <a title="ValidationRule Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html"> Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        ValidationRule Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Classes/EUCentralEUDCCTrustService.html">EUCentralEUDCCTrustService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/RobertKochInstituteEUDCCTrustService.html">RobertKochInstituteEUDCCTrustService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/RobertKochInstituteEUDCCTrustService/Failure.html">– Failure</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Protocols/EUDCCTrustService.html">EUDCCTrustService</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC.html">EUDCC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC.html#/s:5EUDCCAAV19EncoderUserInfoKeysO">– EncoderUserInfoKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/Content.html">– Content</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/Country.html">– Country</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/CryptographicSignature.html">– CryptographicSignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/DiseaseAgentTargeted.html">– DiseaseAgentTargeted</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/Name.html">– Name</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/Recovery.html">– Recovery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/Test.html">– Test</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/Vaccination.html">– Vaccination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/SignedPayload.html">– SignedPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/TrustCertificate.html">– TrustCertificate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/VerificationCandidate.html">– VerificationCandidate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCC/ValidationRule.html">– ValidationRule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCCDecoder.html">EUDCCDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCCDecoder/DecodingError.html">– DecodingError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCCDecoder/CBORProcessingError.html">– CBORProcessingError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCCValidator.html">EUDCCValidator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCCValidator/Failure.html">– Failure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCCVerifier.html">EUDCCVerifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCCVerifier/VerificationResult.html">– VerificationResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/EUDCCVerifier/Failure.html">– Failure</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ValidationRule</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">ValidationRule</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">ValidationRule</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">ValidationRule</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                </div>
+              </div>
+            <p>An <code><a href="../../Structs/EUDCC.html">EUDCC</a></code> ValidationRule</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Typealias"></a>
+                <a name="//apple_ref/swift/Section/Typealias" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Typealias"></a>
+                  <h3 class="section-name"><p>Typealias</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV9Predicatea"></a>
+                    <a name="//apple_ref/swift/Alias/Predicate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV9Predicatea">Predicate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The predicate typealias</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Predicate</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="../../Structs/EUDCC.html">EUDCC</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Properties"></a>
+                  <h3 class="section-name"><p>Properties</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV3tagAE3TagVvp"></a>
+                    <a name="//apple_ref/swift/Property/tag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV3tagAE3TagVvp">tag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Tag</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../../Structs/EUDCC/ValidationRule/Tag.html">Tag</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializer"></a>
+                <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Initializer"></a>
+                  <h3 class="section-name"><p>Initializer</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV3tag9predicateA2E3TagV_SbABctcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(tag:predicate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV3tag9predicateA2E3TagV_SbABctcfc">init(tag:<wbr>predicate:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance of  <code>EUDCC.ValidationRule</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../../Structs/EUDCC/ValidationRule/Tag.html">Tag</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(),</span>
+    <span class="nv">predicate</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../../Structs/EUDCC/ValidationRule.html#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV9Predicatea">Predicate</a></span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The  Tag. Default value <code>.init()</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The predicate closure</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule%2BCompareAgainst"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule+CompareAgainst" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule%2BCompareAgainst"></a>
+                  <h3 class="section-name"><p>ValidationRule+CompareAgainst</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV14CompareAgainstO"></a>
+                    <a name="//apple_ref/swift/Enum/CompareAgainst" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV14CompareAgainstO">CompareAgainst</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The CompareAgainst enumeration</p>
+
+                        <a href="../../Structs/EUDCC/ValidationRule/CompareAgainst.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">CompareAgainst</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule%2BCompare"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule+Compare" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule%2BCompare"></a>
+                  <h3 class="section-name"><p>ValidationRule+Compare</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV7compare5value2to8operator3tagA2E14CompareAgainstOy__xG_AMSbx_xtcAE3TagVtlFZ"></a>
+                    <a name="//apple_ref/swift/Method/compare(value:to:operator:tag:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV7compare5value2to8operator3tagA2E14CompareAgainstOy__xG_AMSbx_xtcAE3TagVtlFZ">compare(value:<wbr>to:<wbr>operator:<wbr>tag:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compare value of a given KeyPath to another value using an operator</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="n">compare</span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../../Structs/EUDCC/ValidationRule/CompareAgainst.html">CompareAgainst</a></span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="n">to</span> <span class="nv">compareAgainstValue</span><span class="p">:</span> <span class="kt"><a href="../../Structs/EUDCC/ValidationRule/CompareAgainst.html">CompareAgainst</a></span><span class="o">&lt;</span><span class="kt">Value</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="nv">operator</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">Value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">,</span>
+    <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../../Structs/EUDCC/ValidationRule/Tag.html">Tag</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keyPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The KeyPath to the value of the EUDCC</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>compareAgainstValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The value to compare against</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>operator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The operator used for comparison</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Tag. Default value <code>.init()</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A ValidationRule</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule%2BCompareDate"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule+CompareDate" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule%2BCompareDate"></a>
+                  <h3 class="section-name"><p>ValidationRule+CompareDate</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV18CompareAgainstDateV"></a>
+                    <a name="//apple_ref/swift/Struct/CompareAgainstDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV18CompareAgainstDateV">CompareAgainstDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The CompareAgainstDate Parameter</p>
+
+                        <a href="../../Structs/EUDCC/ValidationRule/CompareAgainstDate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">CompareAgainstDate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV7compare7lhsDate03rhsG08operator5using3tagA2E014CompareAgainstG0V_AMSb10Foundation0G0V_APtcAN8CalendarVAE3TagVtFZ"></a>
+                    <a name="//apple_ref/swift/Method/compare(lhsDate:rhsDate:operator:using:tag:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV7compare7lhsDate03rhsG08operator5using3tagA2E014CompareAgainstG0V_AMSb10Foundation0G0V_APtcAN8CalendarVAE3TagVtFZ">compare(lhsDate:<wbr>rhsDate:<wbr>operator:<wbr>using:<wbr>tag:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compare two Dates using a given operator</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">compare</span><span class="p">(</span>
+    <span class="nv">lhsDate</span><span class="p">:</span> <span class="kt"><a href="../../Structs/EUDCC/ValidationRule/CompareAgainstDate.html">CompareAgainstDate</a></span><span class="p">,</span>
+    <span class="nv">rhsDate</span><span class="p">:</span> <span class="kt"><a href="../../Structs/EUDCC/ValidationRule/CompareAgainstDate.html">CompareAgainstDate</a></span><span class="p">,</span>
+    <span class="nv">operator</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Date</span><span class="p">,</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">,</span>
+    <span class="n">using</span> <span class="nv">calendar</span><span class="p">:</span> <span class="kt">Calendar</span> <span class="o">=</span> <span class="o">.</span><span class="n">current</span><span class="p">,</span>
+    <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../../Structs/EUDCC/ValidationRule/Tag.html">Tag</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhsDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The left-hand-side CompareAgainstDate</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhsDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The right-hand-side CompareAgainstDate</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>operator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The operator closure</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>calendar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Calendar. Default value <code>.current</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Tag. Default value <code>.init()</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule%2BEqual"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule+Equal" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule%2BEqual"></a>
+                  <h3 class="section-name"><p>ValidationRule+Equal</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2eeoiyA2E_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2eeoiyA2E_AEtFZ">==(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a ValidationRule where two given ValidationRules results will be compared to equality</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span>
+    <span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span>
+    <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The left-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The right-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule%2BUnequal"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule+Unequal" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule%2BUnequal"></a>
+                  <h3 class="section-name"><p>ValidationRule+Unequal</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2neoiyA2E_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/!=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2neoiyA2E_AEtFZ">!=(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a ValidationRule where two given ValidationRule results will be compared to unequality</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">!=</span> <span class="p">(</span>
+    <span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span>
+    <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The left-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The right-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Constant"></a>
+                <a name="//apple_ref/swift/Section/Constant" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Constant"></a>
+                  <h3 class="section-name"><p>Constant</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV8constantyAESbFZ"></a>
+                    <a name="//apple_ref/swift/Method/constant(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV8constantyAESbFZ">constant(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Constant ValidationRule that will always return the given Bool result value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">constant</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Bool</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Bool resul value</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/EUDCC%20Content%20Type"></a>
+                <a name="//apple_ref/swift/Section/EUDCC Content Type" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/EUDCC%20Content%20Type"></a>
+                  <h3 class="section-name"><p>EUDCC Content Type</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV13isVaccinationAEvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isVaccination" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV13isVaccinationAEvpZ">isVaccination</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Has vaccination content ValidationRule</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">isVaccination</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV6isTestAEvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isTest" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV6isTestAEvpZ">isTest</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Has test content ValidationRule</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">isTest</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV10isRecoveryAEvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isRecovery" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV10isRecoveryAEvpZ">isRecovery</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Has recover content ValidationRule</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">isRecovery</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/EUDCC%20Vaccination"></a>
+                <a name="//apple_ref/swift/Section/EUDCC Vaccination" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/EUDCC%20Vaccination"></a>
+                  <h3 class="section-name"><p>EUDCC Vaccination</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV21isVaccinationCompleteAEvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isVaccinationComplete" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV21isVaccinationCompleteAEvpZ">isVaccinationComplete</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Has received all vaccination doses</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">isVaccinationComplete</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV16isFullyImmunized15minimumDaysPast5usingAESi_10Foundation8CalendarVtFZ"></a>
+                    <a name="//apple_ref/swift/Method/isFullyImmunized(minimumDaysPast:using:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV16isFullyImmunized15minimumDaysPast5usingAESi_10Foundation8CalendarVtFZ">isFullyImmunized(minimumDaysPast:<wbr>using:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Vaccination can be considered as fully immunized</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">isFullyImmunized</span><span class="p">(</span>
+    <span class="nv">minimumDaysPast</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="n">using</span> <span class="nv">calendar</span><span class="p">:</span> <span class="kt">Calendar</span> <span class="o">=</span> <span class="o">.</span><span class="n">current</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>minimumDaysPast</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The amount of minimum days past since the last vaccination. Default value <code>15</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>calendar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Calendar that should be used. Default value <code>.current</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV20isVaccinationExpired016maximumDaysSinceF4Date5usingAESi_10Foundation8CalendarVtFZ"></a>
+                    <a name="//apple_ref/swift/Method/isVaccinationExpired(maximumDaysSinceVaccinationDate:using:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV20isVaccinationExpired016maximumDaysSinceF4Date5usingAESi_10Foundation8CalendarVtFZ">isVaccinationExpired(maximumDaysSinceVaccinationDate:<wbr>using:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validates if the vaccination expired by comparing if the current Date
+is greater than the date of vaccination added by the <code>maximumDaysSinceVaccinationDate</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">isVaccinationExpired</span><span class="p">(</span>
+    <span class="nv">maximumDaysSinceVaccinationDate</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">365</span><span class="p">,</span>
+    <span class="n">using</span> <span class="nv">calendar</span><span class="p">:</span> <span class="kt">Calendar</span> <span class="o">=</span> <span class="o">.</span><span class="n">current</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maximumDaysSinceVaccinationDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum days since date of vaccination. Default value <code>365</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>calendar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Calendar. Default value <code>.current</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV34isWellKnownVaccineMedicinalProductAEvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isWellKnownVaccineMedicinalProduct" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV34isWellKnownVaccineMedicinalProductAEvpZ">isWellKnownVaccineMedicinalProduct</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validates if EUDCC contains a Vaccination and the <code>VaccineMedicinalProduct</code> value
+is contained in the  <code>WellKnownValue</code>enumeration</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">isWellKnownVaccineMedicinalProduct</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV30vaccineMedicinalProductIsOneOfyAExSTRzAB11VaccinationV07VaccinefG0V14WellKnownValueO7ElementRtzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/vaccineMedicinalProductIsOneOf(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV30vaccineMedicinalProductIsOneOfyAExSTRzAB11VaccinationV07VaccinefG0V14WellKnownValueO7ElementRtzlFZ">vaccineMedicinalProductIsOneOf(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Validates if the <code>VaccineMedicinalProduct</code> is contained in the given Sequence of VaccineMedicinalProduct WellKnownValues</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="n">vaccineMedicinalProductIsOneOf</span><span class="o">&lt;</span><span class="kt">Vaccines</span><span class="p">:</span> <span class="kt">Sequence</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">validVaccineMedicinalProducts</span><span class="p">:</span> <span class="kt">Vaccines</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span> <span class="k">where</span> <span class="kt">Vaccines</span><span class="o">.</span><span class="kt">Element</span> <span class="o">==</span> <span class="kt"><a href="../../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt"><a href="../../Structs/EUDCC/Vaccination.html">Vaccination</a></span><span class="o">.</span><span class="kt">VaccineMedicinalProduct</span><span class="o">.</span><span class="kt">WellKnownValue</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validVaccineMedicinalProducts</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The VaccineMedicinalProduct WellKnownValue Sequence</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/EUDCC%20Test"></a>
+                <a name="//apple_ref/swift/Section/EUDCC Test" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/EUDCC%20Test"></a>
+                  <h3 class="section-name"><p>EUDCC Test</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV16isTestedPositiveAEvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isTestedPositive" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV16isTestedPositiveAEvpZ">isTestedPositive</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>TestResult of Test is positive</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">isTestedPositive</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV16isTestedNegativeAEvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isTestedNegative" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV16isTestedNegativeAEvpZ">isTestedNegative</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>TestResult of Test is negative</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">isTestedNegative</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV11isTestValid16maximumHoursPast5usingAESiAB0F0V0F4TypeV14WellKnownValueOc_10Foundation8CalendarVtFZ"></a>
+                    <a name="//apple_ref/swift/Method/isTestValid(maximumHoursPast:using:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV11isTestValid16maximumHoursPast5usingAESiAB0F0V0F4TypeV14WellKnownValueOc_10Foundation8CalendarVtFZ">isTestValid(maximumHoursPast:<wbr>using:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Is Test valid</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">isTestValid</span><span class="p">(</span>
+    <span class="nv">maximumHoursPast</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt"><a href="../../Structs/EUDCC/Test.html">Test</a></span><span class="o">.</span><span class="kt">TestType</span><span class="o">.</span><span class="kt">WellKnownValue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">=</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="o">.</span><span class="n">pcr</span> <span class="p">?</span> <span class="mi">72</span> <span class="p">:</span> <span class="mi">48</span> <span class="p">},</span>
+    <span class="n">using</span> <span class="nv">calendar</span><span class="p">:</span> <span class="kt">Calendar</span> <span class="o">=</span> <span class="o">.</span><span class="n">current</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maximumHoursPast</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum hours past since date of sample collection. Default value <code>PCR: 72 | RAPID: 48</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>calendar</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Calendar that should be used. Default value <code>.current</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/EUDCC%20Recovery"></a>
+                <a name="//apple_ref/swift/Section/EUDCC Recovery" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/EUDCC%20Recovery"></a>
+                  <h3 class="section-name"><p>EUDCC Recovery</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV15isRecoveryValidAEvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isRecoveryValid" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV15isRecoveryValidAEvpZ">isRecoveryValid</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Is Recovery valid</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">isRecoveryValid</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule%2Bif"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule+if" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule%2Bif"></a>
+                  <h3 class="section-name"><p>ValidationRule+if</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2if_4then4elseA2E_A2EtFZ"></a>
+                    <a name="//apple_ref/swift/Method/if(_:then:else:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2if_4then4elseA2E_A2EtFZ">if(_:<wbr>then:<wbr>else:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Conditionally execute a ValidationRule</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="p">`</span><span class="nv">if</span><span class="p">`(</span>
+    <span class="n">_</span> <span class="nv">condition</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span>
+    <span class="nv">then</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span>
+    <span class="nv">else</span><span class="p">:</span> <span class="k">Self</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ValidationRule that will be evaluated</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>then</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The then ValidationRule</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>else</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The optional ValidationRule</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule%2BNot"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule+Not" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule%2BNot"></a>
+                  <h3 class="section-name"><p>ValidationRule+Not</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV1nopyA2EFZ"></a>
+                    <a name="//apple_ref/swift/Method/!(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV1nopyA2EFZ">!(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a logical <code>NOT</code> (<code>!</code>) operation on a ValidationRule</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">prefix</span> <span class="kd">func</span> <span class="o">!</span> <span class="p">(</span>
+    <span class="nv">rule</span><span class="p">:</span> <span class="kt"><a href="../../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">ValidationRule</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rule</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ValidationRule to negate</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule%2BAnd"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule+And" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule%2BAnd"></a>
+                  <h3 class="section-name"><p>ValidationRule+And</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2aaoiyA2E_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&amp;&amp;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2aaoiyA2E_AEtFZ">&&(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a logical <code>AND</code> (<code>&amp;&amp;</code>) operation on two ValidationRules</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+    <span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span>
+    <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The left-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The right-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule%2BOr"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule+Or" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule%2BOr"></a>
+                  <h3 class="section-name"><p>ValidationRule+Or</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2oooiyA2E_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/||(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2oooiyA2E_AEtFZ">||(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a logical <code>OR</code> (<code>||</code>) operation on two ValidationRules</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">||</span> <span class="p">(</span>
+    <span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span>
+    <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The left-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The right-hand side of the operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Tag"></a>
+                <a name="//apple_ref/swift/Section/Tag" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Tag"></a>
+                  <h3 class="section-name"><p>Tag</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV3TagV"></a>
+                    <a name="//apple_ref/swift/Struct/Tag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV3TagV">Tag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An EUDCC ValidationRule Tag</p>
+
+                        <a href="../../Structs/EUDCC/ValidationRule/Tag.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Tag</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt"><a href="../../Structs/EUDCC/ValidationRule.html">ValidationRule</a></span><span class="o">.</span><span class="kt">Tag</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt"><a href="../../Structs/EUDCC/ValidationRule.html">ValidationRule</a></span><span class="o">.</span><span class="kt">Tag</span><span class="p">:</span> <span class="kt">ExpressibleByStringInterpolation</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Default"></a>
+                <a name="//apple_ref/swift/Section/Default" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Default"></a>
+                  <h3 class="section-name"><p>Default</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV7defaultAEvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/default" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV7defaultAEvpZ">default</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default <code>EUDCC.ValidationRule</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">var</span> <span class="p">`</span><span class="nv">default</span><span class="p">`:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Equatable"></a>
+                <a name="//apple_ref/swift/Section/Equatable" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Equatable"></a>
+                  <h3 class="section-name"><p>Equatable</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2eeoiySbAE_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV2eeoiySbAE_AEtFZ">==(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a Boolean value indicating whether two values are equal.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span>
+    <span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span>
+    <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A value to compare.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rhs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Another value to compare.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Hashable"></a>
+                <a name="//apple_ref/swift/Section/Hashable" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Hashable"></a>
+                  <h3 class="section-name"><p>Hashable</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV4hash4intoys6HasherVz_tF"></a>
+                    <a name="//apple_ref/swift/Method/hash(into:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV4hash4intoys6HasherVz_tF">hash(into:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hashes the essential components of this value by feeding them into the
+given hasher.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hash</span><span class="p">(</span>
+    <span class="n">into</span> <span class="nv">hasher</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Hasher</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>hasher</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The hasher to use when combining the components of this instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-07-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

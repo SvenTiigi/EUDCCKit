@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EUDCC Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/EUDCC" class="dashAnchor"></a>
+    <a title="EUDCC Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        EUDCC Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/EUCentralEUDCCTrustService.html">EUCentralEUDCCTrustService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RobertKochInstituteEUDCCTrustService.html">RobertKochInstituteEUDCCTrustService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RobertKochInstituteEUDCCTrustService/Failure.html">– Failure</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/EUDCCTrustService.html">EUDCCTrustService</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC.html">EUDCC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC.html#/s:5EUDCCAAV19EncoderUserInfoKeysO">– EncoderUserInfoKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Content.html">– Content</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Country.html">– Country</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/CryptographicSignature.html">– CryptographicSignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/DiseaseAgentTargeted.html">– DiseaseAgentTargeted</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Name.html">– Name</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Recovery.html">– Recovery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Test.html">– Test</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/Vaccination.html">– Vaccination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/SignedPayload.html">– SignedPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/TrustCertificate.html">– TrustCertificate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/VerificationCandidate.html">– VerificationCandidate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCC/ValidationRule.html">– ValidationRule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCDecoder.html">EUDCCDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCDecoder/DecodingError.html">– DecodingError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCDecoder/CBORProcessingError.html">– CBORProcessingError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCValidator.html">EUDCCValidator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCValidator/Failure.html">– Failure</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCVerifier.html">EUDCCVerifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCVerifier/VerificationResult.html">– VerificationResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EUDCCVerifier/Failure.html">– Failure</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>EUDCC</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">EUDCC</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">EUDCC</span><span class="p">:</span> <span class="kt">Decodable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">EUDCC</span><span class="p">:</span> <span class="kt">Encodable</span></code></pre>
+
+                </div>
+              </div>
+            <p>The European Digital COVID Certificate (EUCC)</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Properties"></a>
+                  <h3 class="section-name"><p>Properties</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV6issuerSSvp"></a>
+                    <a name="//apple_ref/swift/Property/issuer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV6issuerSSvp">issuer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The issuer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">issuer</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV8issuedAt10Foundation4DateVvp"></a>
+                    <a name="//apple_ref/swift/Property/issuedAt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV8issuedAt10Foundation4DateVvp">issuedAt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The issued at Date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">issuedAt</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV9expiresAt10Foundation4DateVvp"></a>
+                    <a name="//apple_ref/swift/Property/expiresAt" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV9expiresAt10Foundation4DateVvp">expiresAt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The expiry Date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">expiresAt</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14schmemaVersionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/schmemaVersion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14schmemaVersionSSvp">schmemaVersion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Schema version</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">schmemaVersion</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV11dateOfBirth10Foundation4DateVvp"></a>
+                    <a name="//apple_ref/swift/Property/dateOfBirth" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV11dateOfBirth10Foundation4DateVvp">dateOfBirth</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The date of birth</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">dateOfBirth</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV4nameAB4NameVvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV4nameAB4NameVvp">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Name</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC/Name.html">Name</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV7contentAB7ContentOvp"></a>
+                    <a name="//apple_ref/swift/Property/content" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV7contentAB7ContentOvp">content</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Content</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">content</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC/Content.html">Content</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV22cryptographicSignatureAB013CryptographicC0Vvp"></a>
+                    <a name="//apple_ref/swift/Property/cryptographicSignature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV22cryptographicSignatureAB013CryptographicC0Vvp">cryptographicSignature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The CryptographicSignature</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">cryptographicSignature</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC/CryptographicSignature.html">CryptographicSignature</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV20base45RepresentationSSvp"></a>
+                    <a name="//apple_ref/swift/Property/base45Representation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV20base45RepresentationSSvp">base45Representation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Base-45 representation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">base45Representation</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializer"></a>
+                <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Initializer"></a>
+                  <h3 class="section-name"><p>Initializer</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV6issuer8issuedAt07expiresD014schmemaVersion11dateOfBirth4name7content22cryptographicSignature20base45RepresentationABSS_10Foundation4DateVANSSAnB4NameVAB7ContentOAB013CryptographicN0VSStcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(issuer:issuedAt:expiresAt:schmemaVersion:dateOfBirth:name:content:cryptographicSignature:base45Representation:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV6issuer8issuedAt07expiresD014schmemaVersion11dateOfBirth4name7content22cryptographicSignature20base45RepresentationABSS_10Foundation4DateVANSSAnB4NameVAB7ContentOAB013CryptographicN0VSStcfc">init(issuer:<wbr>issuedAt:<wbr>expiresAt:<wbr>schmemaVersion:<wbr>dateOfBirth:<wbr>name:<wbr>content:<wbr>cryptographicSignature:<wbr>base45Representation:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance of <code>EUDCC</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">issuer</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">issuedAt</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
+    <span class="nv">expiresAt</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
+    <span class="nv">schmemaVersion</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">dateOfBirth</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC/Name.html">Name</a></span><span class="p">,</span>
+    <span class="nv">content</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC/Content.html">Content</a></span><span class="p">,</span>
+    <span class="nv">cryptographicSignature</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC/CryptographicSignature.html">CryptographicSignature</a></span><span class="p">,</span>
+    <span class="nv">base45Representation</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>issuer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The issuer</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>issuedAt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The issued at Date</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>expiresAt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The expiry Date</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>schmemaVersion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Schema version</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dateOfBirth</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The date of birth</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Name</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>content</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Content</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cryptographicSignature</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The CryptographicSignature</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>base45Representation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The The Base-45 representation</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Decodable"></a>
+                <a name="//apple_ref/swift/Section/Decodable" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Decodable"></a>
+                  <h3 class="section-name"><p>Decodable</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV4fromABs7Decoder_p_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV4fromABs7Decoder_p_tKcfc">init(from:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance by decoding from the given decoder.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decoder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The decoder to read data from.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/EncoderUserInfoKeys"></a>
+                <a name="//apple_ref/swift/Section/EncoderUserInfoKeys" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/EncoderUserInfoKeys"></a>
+                  <h3 class="section-name"><p>EncoderUserInfoKeys</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV19EncoderUserInfoKeysO"></a>
+                    <a name="//apple_ref/swift/Enum/EncoderUserInfoKeys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV19EncoderUserInfoKeysO">EncoderUserInfoKeys</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC Encoder UserInfo Keys</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">EncoderUserInfoKeys</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Encodable"></a>
+                <a name="//apple_ref/swift/Section/Encodable" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Encodable"></a>
+                  <h3 class="section-name"><p>Encodable</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV6encode2toys7Encoder_p_tKF"></a>
+                    <a name="//apple_ref/swift/Method/encode(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV6encode2toys7Encoder_p_tKF">encode(to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Encodes this value into the given encoder.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="nv">encoder</span><span class="p">:</span> <span class="kt">Encoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The encoder to write data to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Content"></a>
+                <a name="//apple_ref/swift/Section/Content" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Content"></a>
+                  <h3 class="section-name"><p>Content</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV7ContentO"></a>
+                    <a name="//apple_ref/swift/Enum/Content" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV7ContentO">Content</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC Content</p>
+
+                        <a href="../Structs/EUDCC/Content.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Content</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Country"></a>
+                <a name="//apple_ref/swift/Section/Country" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Country"></a>
+                  <h3 class="section-name"><p>Country</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV7CountryV"></a>
+                    <a name="//apple_ref/swift/Struct/Country" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV7CountryV">Country</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC Country</p>
+
+                        <a href="../Structs/EUDCC/Country.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Country</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">Country</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/CryptographicSignature"></a>
+                <a name="//apple_ref/swift/Section/CryptographicSignature" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/CryptographicSignature"></a>
+                  <h3 class="section-name"><p>CryptographicSignature</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV22CryptographicSignatureV"></a>
+                    <a name="//apple_ref/swift/Struct/CryptographicSignature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV22CryptographicSignatureV">CryptographicSignature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC CryptographicSignature</p>
+
+                        <a href="../Structs/EUDCC/CryptographicSignature.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">CryptographicSignature</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/DiseaseAgentTargeted"></a>
+                <a name="//apple_ref/swift/Section/DiseaseAgentTargeted" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/DiseaseAgentTargeted"></a>
+                  <h3 class="section-name"><p>DiseaseAgentTargeted</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV20DiseaseAgentTargetedV"></a>
+                    <a name="//apple_ref/swift/Struct/DiseaseAgentTargeted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV20DiseaseAgentTargetedV">DiseaseAgentTargeted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC disease or agent targeted</p>
+
+                        <a href="../Structs/EUDCC/DiseaseAgentTargeted.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">DiseaseAgentTargeted</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">DiseaseAgentTargeted</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Name"></a>
+                <a name="//apple_ref/swift/Section/Name" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Name"></a>
+                  <h3 class="section-name"><p>Name</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV4NameV"></a>
+                    <a name="//apple_ref/swift/Struct/Name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV4NameV">Name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC Person Name</p>
+
+                        <a href="../Structs/EUDCC/Name.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Name</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">Name</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Convenience%20Content%20Accessor"></a>
+                <a name="//apple_ref/swift/Section/Convenience Content Accessor" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Convenience%20Content%20Accessor"></a>
+                  <h3 class="section-name"><p>Convenience Content Accessor</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV11vaccinationAB11VaccinationVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/vaccination" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV11vaccinationAB11VaccinationVSgvp">vaccination</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Vaccination case of the <code><a href="../Structs/EUDCC/Content.html">Content</a></code> if available</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">vaccination</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC/Vaccination.html">Vaccination</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV4testAB4TestVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/test" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV4testAB4TestVSgvp">test</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Test case of the <code><a href="../Structs/EUDCC/Content.html">Content</a></code> if available</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">test</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC/Test.html">Test</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV8recoveryAB8RecoveryVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/recovery" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV8recoveryAB8RecoveryVSgvp">recovery</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Recovery case of the <code><a href="../Structs/EUDCC/Content.html">Content</a></code> if available</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">recovery</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCC/Recovery.html">Recovery</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Recovery"></a>
+                <a name="//apple_ref/swift/Section/Recovery" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Recovery"></a>
+                  <h3 class="section-name"><p>Recovery</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV8RecoveryV"></a>
+                    <a name="//apple_ref/swift/Struct/Recovery" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV8RecoveryV">Recovery</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC Recovery Entry</p>
+
+                        <a href="../Structs/EUDCC/Recovery.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Recovery</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">Recovery</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Test"></a>
+                <a name="//apple_ref/swift/Section/Test" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Test"></a>
+                  <h3 class="section-name"><p>Test</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV4TestV"></a>
+                    <a name="//apple_ref/swift/Struct/Test" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV4TestV">Test</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC Test Entry</p>
+
+                        <a href="../Structs/EUDCC/Test.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Test</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">Test</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Vaccination"></a>
+                <a name="//apple_ref/swift/Section/Vaccination" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Vaccination"></a>
+                  <h3 class="section-name"><p>Vaccination</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV11VaccinationV"></a>
+                    <a name="//apple_ref/swift/Struct/Vaccination" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV11VaccinationV">Vaccination</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC Vaccination Entry</p>
+
+                        <a href="../Structs/EUDCC/Vaccination.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Vaccination</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">Vaccination</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Convenience%20Decode"></a>
+                <a name="//apple_ref/swift/Section/Convenience Decode" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Convenience%20Decode"></a>
+                  <h3 class="section-name"><p>Convenience Decode</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV12EUDCCDecoderE6decode4from5usings6ResultOyAb2CV13DecodingErrorOGSS_AItFZ"></a>
+                    <a name="//apple_ref/swift/Method/decode(from:using:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV12EUDCCDecoderE6decode4from5usings6ResultOyAb2CV13DecodingErrorOGSS_AItFZ">decode(from:<wbr>using:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Decode <code>EUDCC</code> from EUDCC String representation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">decode</span><span class="p">(</span>
+    <span class="n">from</span> <span class="nv">eudccStringRepresentation</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="n">using</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCCDecoder.html">EUDCCDecoder</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="k">Self</span><span class="p">,</span> <span class="kt"><a href="../Structs/EUDCCDecoder.html">EUDCCDecoder</a></span><span class="o">.</span><span class="kt">DecodingError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>eudccStringRepresentation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The EUDCC String representation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>decoder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Structs/EUDCCDecoder.html">EUDCCDecoder</a></code>. Default value <code>.init()</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A Result contains either the successfully decoded EUDCC or an DecodingError</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/EUDCC%2Bverify"></a>
+                <a name="//apple_ref/swift/Section/EUDCC+verify" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/EUDCC%2Bverify"></a>
+                  <h3 class="section-name"><p>EUDCC+verify</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV13EUDCCVerifierE6verify5using10completionyA2CV_yAG18VerificationResultOctF"></a>
+                    <a name="//apple_ref/swift/Method/verify(using:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV13EUDCCVerifierE6verify5using10completionyA2CV_yAG18VerificationResultOctF">verify(using:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verify <code>EUDCC</code> using an <code><a href="../Structs/EUDCCVerifier.html">EUDCCVerifier</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">verify</span><span class="p">(</span>
+    <span class="n">using</span> <span class="nv">verifier</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCCVerifier.html">EUDCCVerifier</a></span><span class="p">,</span>
+    <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/EUDCCVerifier.html">EUDCCVerifier</a></span><span class="o">.</span><span class="kt">VerificationResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>verifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The EUDCCVerifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The verification completion closure</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/SignedPayload"></a>
+                <a name="//apple_ref/swift/Section/SignedPayload" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/SignedPayload"></a>
+                  <h3 class="section-name"><p>SignedPayload</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV13EUDCCVerifierE13SignedPayloadV"></a>
+                    <a name="//apple_ref/swift/Struct/SignedPayload" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV13EUDCCVerifierE13SignedPayloadV">SignedPayload</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The EUDCC SignedPayload</p>
+
+                        <a href="../Structs/EUDCC/SignedPayload.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SignedPayload</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/EUDCC%2BTrustCertificate"></a>
+                <a name="//apple_ref/swift/Section/EUDCC+TrustCertificate" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/EUDCC%2BTrustCertificate"></a>
+                  <h3 class="section-name"><p>EUDCC+TrustCertificate</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV13EUDCCVerifierE16TrustCertificateV"></a>
+                    <a name="//apple_ref/swift/Struct/TrustCertificate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV13EUDCCVerifierE16TrustCertificateV">TrustCertificate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An EUDCC TrustCertificate</p>
+
+                        <a href="../Structs/EUDCC/TrustCertificate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">TrustCertificate</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/EUDCC%2BVerificationCandidate"></a>
+                <a name="//apple_ref/swift/Section/EUDCC+VerificationCandidate" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/EUDCC%2BVerificationCandidate"></a>
+                  <h3 class="section-name"><p>EUDCC+VerificationCandidate</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV13EUDCCVerifierE21VerificationCandidateV"></a>
+                    <a name="//apple_ref/swift/Struct/VerificationCandidate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV13EUDCCVerifierE21VerificationCandidateV">VerificationCandidate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An EUDCC Verification Candidate</p>
+
+                        <a href="../Structs/EUDCC/VerificationCandidate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">VerificationCandidate</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/EUDCC%2Bvalidate"></a>
+                <a name="//apple_ref/swift/Section/EUDCC+validate" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/EUDCC%2Bvalidate"></a>
+                  <h3 class="section-name"><p>EUDCC+validate</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE8validate4rule5usings6ResultOyytA2CV7FailureVGAbCE14ValidationRuleV_AItF"></a>
+                    <a name="//apple_ref/swift/Method/validate(rule:using:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE8validate4rule5usings6ResultOyytA2CV7FailureVGAbCE14ValidationRuleV_AItF">validate(rule:<wbr>using:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Valide <code>EUDCC</code> using a <code><a href="../Structs/EUDCC/ValidationRule.html">ValidationRule</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">validate</span><span class="p">(</span>
+    <span class="nv">rule</span><span class="p">:</span> <span class="kt">EUDCC</span><span class="o">.</span><span class="kt"><a href="../Structs/EUDCC/ValidationRule.html">ValidationRule</a></span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span>
+    <span class="n">using</span> <span class="nv">validator</span><span class="p">:</span> <span class="kt"><a href="../Structs/EUDCCValidator.html">EUDCCValidator</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/EUDCCValidator.html">EUDCCValidator</a></span><span class="o">.</span><span class="kt">ValidationResult</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rule</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ValidationRule that hsould be used to value the EUDCC. Default value <code>.default</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>validator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The EUDCCValidator. Default value <code>.init()</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The ValidationResult</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ValidationRule"></a>
+                <a name="//apple_ref/swift/Section/ValidationRule" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ValidationRule"></a>
+                  <h3 class="section-name"><p>ValidationRule</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV"></a>
+                    <a name="//apple_ref/swift/Struct/ValidationRule" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5EUDCCAAV14EUDCCValidatorE14ValidationRuleV">ValidationRule</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An <code><a href="../Structs/EUDCC.html">EUDCC</a></code> ValidationRule</p>
+
+                        <a href="../Structs/EUDCC/ValidationRule.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">ValidationRule</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">ValidationRule</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Structs/EUDCC.html">EUDCC</a></span><span class="o">.</span><span class="kt">ValidationRule</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-07-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
