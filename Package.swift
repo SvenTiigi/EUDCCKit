@@ -24,6 +24,12 @@ let package = Package(
             ]
         ),
         .library(
+            name: "EUDCCValidator",
+            targets: [
+                "EUDCCValidator"
+            ]
+        ),
+        .library(
             name: "EUDCCVerifier",
             targets: [
                 "EUDCCVerifier"
