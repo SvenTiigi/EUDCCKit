@@ -50,12 +50,15 @@ public extension EUDCC {
 public extension EUDCC.Name {
     
     /// Retrieve the formatted full name
-    /// - Parameter formatter: The PersonNameComponentsFormatter. Default value `.init()`
+    /// - Parameters:
+    ///   - formatter: The PersonNameComponentsFormatter. Default value `.init()`
+    ///   - components: The PersonNameComponents. Default value `.init()`
     /// - Returns: The formatted full name
     func formatted(
-        using formatter: PersonNameComponentsFormatter = .init()
+        using formatter: PersonNameComponentsFormatter = .init(),
+        components: PersonNameComponents = .init()
     ) -> String {
-        var components = PersonNameComponents()
+        var components = components
         components.givenName = self.firstName
         components.familyName = self.lastName
         return formatter.string(from: components)
