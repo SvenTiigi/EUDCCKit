@@ -9,30 +9,30 @@ public extension EUDCC {
         
         // MARK: Properties
         
-        /// The first name
-        public let firstName: String
+        /// The optional first name
+        public let firstName: String?
         
-        /// The standardised first name
-        public let standardisedFirstName: String
+        /// The optional standardised first name
+        public let standardisedFirstName: String?
         
-        /// The last name
-        public let lastName: String
+        /// The optional last name
+        public let lastName: String?
 
-        /// The standardised last name
+        /// The optional standardised last name
         public let standardisedLastName: String
         
         // MARK: Initializer
         
         /// Creates a new instance of `EUDCC.Person`
         /// - Parameters:
-        ///   - firstName: The first name
-        ///   - standardisedFirstName: The standardised first name
-        ///   - lastName: The last name
+        ///   - firstName: The optional first name. Default value `nil`
+        ///   - standardisedFirstName: The optional standardised first name. Default value `nil`
+        ///   - lastName: The optional last name. Default value `nil`
         ///   - standardisedLastName: The standardised last name
         public init(
-            firstName: String,
-            standardisedFirstName: String,
-            lastName: String,
+            firstName: String? = nil,
+            standardisedFirstName: String? = nil,
+            lastName: String? = nil,
             standardisedLastName: String
         ) {
             self.firstName = firstName
