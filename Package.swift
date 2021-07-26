@@ -34,7 +34,13 @@ let package = Package(
             targets: [
                 "EUDCCVerifier"
             ]
-        )
+        ),
+        .library(
+            name: "EUDCCValidator",
+            targets: [
+                "EUDCCValidator"
+            ]
+        ),
     ],
     dependencies: [
         .package(
