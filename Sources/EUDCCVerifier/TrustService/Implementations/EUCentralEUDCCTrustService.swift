@@ -16,7 +16,7 @@ public final class EUCentralEUDCCTrustService {
     /// Designated Initializer
     /// - Parameter url: The URL
     public init(
-        url: URL = .init(string: "https://dgca-verifier-service-eu-acc.cfapps.eu10.hana.ondemand.com/signercertificateUpdate")!
+        url: URL = .init(string: "https://dgca-verifier-service.cfapps.eu10.hana.ondemand.com/signercertificateUpdate")!
     ) {
         self.url = url
     }
@@ -79,7 +79,7 @@ extension EUCentralEUDCCTrustService {
                 return completion(trustCertificates)
             }
             // Verify KeyID and Data is available
-            guard let keyId = httpResponse.allHeaderFields["X-ID"] as? String,
+            guard let keyId = httpResponse.allHeaderFields["x-kid"] as? String,
                   let data = data else {
                 // Otherwise complete with current TrustCertificates
                 return completion(trustCertificates)
@@ -94,7 +94,7 @@ extension EUCentralEUDCCTrustService {
             // Append TrustCertificate to current TrustCertificates
             let trustCertificates = trustCertificates + [trustCertificate]
             // Verify the next ResumeToken is available
-            guard let nextResumeToken = httpResponse.allHeaderFields["X-RESUME-TOKEN"] as? String else {
+            guard let nextResumeToken = httpResponse.allHeaderFields["x-resume-token"] as? String else {
                 // Otherwise complete with current SignerCertificates
                 return completion(trustCertificates)
             }
