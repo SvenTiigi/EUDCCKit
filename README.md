@@ -293,6 +293,21 @@ The `EUDCCKit` comes along with two pre defined `EUDCCTrustService` implementati
 - `EUCentralEUDCCTrustService`
 - `RobertKochInstituteEUDCCTrustService`
 
+If you wish to retrieve certificates from multiple `EUDCCTrustService` implementation you can make use of the `GroupableEUDCCTrustService`:
+
+```swift
+let trustService = GroupableEUDCCTrustService(
+    trustServices: [
+        EUCentralEUDCCTrustService(),
+        RobertKochInstituteEUDCCTrustService()
+    ]
+)
+
+trustService.getTrustCertificates { certificates in
+    // ...
+}
+```
+
 #### Convenience verification
 
 By importing the `EUDCCVerifier` library the `EUDCC` object will be extended with a `verify` function.
