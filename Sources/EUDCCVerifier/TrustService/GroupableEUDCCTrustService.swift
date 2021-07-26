@@ -104,7 +104,7 @@ extension GroupableEUDCCTrustService: EUDCCTrustService {
                 .compactMap { try? $0.get() }
                 .flatMap { $0 }
             // Verify Certificates are not empty
-            guard certificates.isEmpty else {
+            guard !certificates.isEmpty else {
                 // Otherwise complete with failure
                 return completion(
                     .failure(
