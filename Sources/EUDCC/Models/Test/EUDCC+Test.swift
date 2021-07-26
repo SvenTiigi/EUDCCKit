@@ -56,8 +56,8 @@ public extension EUDCC {
         public init(
             diseaseAgentTargeted: DiseaseAgentTargeted,
             typeOfTest: TestType,
-            testName: String,
-            testNameAndManufacturer: String,
+            testName: String?,
+            testNameAndManufacturer: String?,
             dateOfSampleCollection: Date,
             testResult: TestResult,
             testingCentre: String,
