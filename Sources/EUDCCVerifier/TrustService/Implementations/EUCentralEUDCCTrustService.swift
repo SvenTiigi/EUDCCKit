@@ -46,7 +46,7 @@ extension EUCentralEUDCCTrustService: EUDCCTrustService {
 
 // MARK: - Fetch Certificates
 
-extension EUCentralEUDCCTrustService {
+private extension EUCentralEUDCCTrustService {
     
     /// Fetch Certificates recursively
     /// - Parameters:
