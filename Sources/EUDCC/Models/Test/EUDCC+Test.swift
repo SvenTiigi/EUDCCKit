@@ -16,10 +16,10 @@ public extension EUDCC {
         public let typeOfTest: TestType
         
         /// Test Name
-        public let testName: String
+        public let testName: String?
         
         /// RAT Test name and manufacturer
-        public let testNameAndManufacturer: String
+        public let testNameAndManufacturer: String?
         
         /// Date/Time of sample collection
         public let dateOfSampleCollection: Date
@@ -105,8 +105,8 @@ extension EUDCC.Test: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.diseaseAgentTargeted = try container.decode(EUDCC.DiseaseAgentTargeted.self, forKey: .diseaseAgentTargeted)
         self.typeOfTest = try container.decode(TestType.self, forKey: .typeOfTest)
-        self.testName = try container.decode(String.self, forKey: .testName)
-        self.testNameAndManufacturer = try container.decode(String.self, forKey: .testNameAndManufacturer)
+        self.testName = try container.decodeIfPresent(String.self, forKey: .testName)
+        self.testNameAndManufacturer = try container.decodeIfPresent(String.self, forKey: .testNameAndManufacturer)
         self.dateOfSampleCollection = try container.decode(forKey: .dateOfSampleCollection, using: EUDCCDateFormatter.default)
         self.testResult = try container.decode(TestResult.self, forKey: .testResult)
         self.testingCentre = try container.decode(String.self, forKey: .testingCentre)
