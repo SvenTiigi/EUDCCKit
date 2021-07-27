@@ -28,7 +28,7 @@ public extension EUDCC {
         public let testResult: TestResult
         
         /// Testing Centre
-        public let testingCentre: String
+        public let testingCentre: String?
         
         /// Country of Test
         public let countryOfTest: Country
@@ -109,7 +109,7 @@ extension EUDCC.Test: Codable {
         self.testNameAndManufacturer = try container.decodeIfPresent(String.self, forKey: .testNameAndManufacturer)
         self.dateOfSampleCollection = try container.decode(forKey: .dateOfSampleCollection, using: EUDCCDateFormatter.default)
         self.testResult = try container.decode(TestResult.self, forKey: .testResult)
-        self.testingCentre = try container.decode(String.self, forKey: .testingCentre)
+        self.testingCentre = try container.decodeIfPresent(String.self, forKey: .testingCentre)
         self.countryOfTest = try container.decode(EUDCC.Country.self, forKey: .countryOfTest)
         self.certificateIssuer = try container.decode(String.self, forKey: .certificateIssuer)
         self.certificateIdentifier = try container.decode(String.self, forKey: .certificateIdentifier)
