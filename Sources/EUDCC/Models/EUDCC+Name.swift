@@ -59,8 +59,8 @@ public extension EUDCC.Name {
         components: PersonNameComponents = .init()
     ) -> String {
         var components = components
-        components.givenName = self.firstName
-        components.familyName = self.lastName
+        components.givenName = self.firstName ?? self.standardisedFirstName
+        components.familyName = self.lastName ?? self.standardisedLastName
         return formatter.string(from: components)
     }
     
