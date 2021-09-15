@@ -37,7 +37,7 @@ extension Data {
             var x = UInt32(base45EncodedData[index]) + UInt32(base45EncodedData[index + 1]) * 45
             if base45EncodedData.count - index >= 3 {
                 x += 45 * 45 * .init(base45EncodedData[index + 2])
-                guard x / 256 <= .max else {
+                guard x / 256 <= UInt8.max else {
                     throw Base45EncodingError.dataOverflow
                 }
                 base45DecodedData.append(.init(x / 256))
