@@ -101,7 +101,7 @@ public extension EUDCC.ValidationRule {
                 lhsDate: .currentDate,
                 rhsDate: .init(
                     .keyPath(\.vaccination?.dateOfVaccination),
-                    adding: (.hour, maximumDaysSinceVaccinationDate)
+                    adding: (.day, maximumDaysSinceVaccinationDate)
                 ),
                 operator: >,
                 using: calendar,
