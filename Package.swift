@@ -39,7 +39,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/unrelentingtech/SwiftCBOR.git",
-            .exact("0.4.3")
+            .exact("0.4.5")
         )
     ],
     targets: [
